@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
+import "./styles.css";
+
 
 class Navbar extends Component {
     constructor() {
@@ -25,7 +27,7 @@ class Navbar extends Component {
             return (
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/signup">Signup</Link>
+                        <Link className="nav-link" to="/signup">Sign Up</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/login">Login</Link>
