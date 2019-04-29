@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from "../components/Navbar"
+import ContactUs from './../components/ContactUs';
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -13,6 +13,7 @@ class Main extends Component {
             <div>
             
             <h1>Hello</h1>
+            <ContactUs />
             </div>
         )
     }

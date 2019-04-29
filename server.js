@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true, useCreateIndex: true})
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolioDB', {useNewUrlParser: true, useCreateIndex: true})
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
@@ -76,6 +76,25 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
+
+app.get("/api/contactinfo", (req, res) => {
+  db.ContactUs
+   .find({})
+   .then(dbContactUs => res.json(dbContactUs))
+   .catch(err => res.json(err));
+ });
+
+ app.post("/api/new", (req, res) => {
+  db.ContactUs
+    .create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      comment: req.body.comment,
+    }).then(dbContactUs => res.json(dbContactUs))
+    .catch(err => res.json(err));
+})
+ 
 
 // Send every request to the React app
 // Define any API routes before this runs
