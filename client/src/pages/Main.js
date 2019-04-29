@@ -14,21 +14,22 @@ class Main extends Component {
 
     render() {
         return (
-        <div>
-            <section id="hero">
-                <div className="container">
-                    <div className="hero-image">
-                        <div className="hero-text text-light">
-                            <div className="starter-template">
-                                <h1>The Amanda Section</h1>
-                                <p className="lead">A brief discription of what the page is about</p>
+            <div>
+                <section id="hero">
+                    <div className="container">
+                        <div className="hero-image">
+                            <div className="hero-text text-light">
+                                <div className="starter-template">
+                                    <h1>The Amanda Section</h1>
+                                    <p className="lead">A brief discription of what the page is about</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <GalleryLinks />
-            <ContactUs />
+                </section>
+            
+                <GalleryLinks />
+                <ContactUs />
             </div>
         )
     }
