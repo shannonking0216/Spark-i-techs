@@ -7,18 +7,18 @@ export default {
   },
   // sign up a user to our service
   signUpUser: (username, email, password) => {
-    return axios.post('api/signup', {username: username, email: email, password: password});
+    return axios.post('api/signup', { username: username, email: email, password: password });
   },
 
-  getAllContacts: function() {
-    return axios.get("/api/contactinfocd ");
-    
-},
+  getAllContacts: function () {
+    return axios.get("/api/contactinfo ");
 
-addNewContactInfo: function(ContactUs) {
-    return axios.post("/api/new", ContactUs);
+  },
 
-},
+  addNewContactInfo: function (ContactUs) {
+    return axios.post("/api/newcontact", ContactUs);
+
+  },
 
 
 };

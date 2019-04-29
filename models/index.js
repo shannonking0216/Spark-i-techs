@@ -1,4 +1,5 @@
 module.exports = {
   User: require('./User'),
-  ContactUs: require('./contactus')
+  ContactUs: require('./contactus'),
+  Galleries: require('./galleries')
 };

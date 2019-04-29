@@ -84,7 +84,7 @@ app.get("/api/contactinfo", (req, res) => {
    .catch(err => res.json(err));
  });
 
- app.post("/api/new", (req, res) => {
+ app.post("/api/newcontact", (req, res) => {
   db.ContactUs
     .create({
       firstName: req.body.firstName,
@@ -94,6 +94,18 @@ app.get("/api/contactinfo", (req, res) => {
     }).then(dbContactUs => res.json(dbContactUs))
     .catch(err => res.json(err));
 })
+
+app.post("/api/newphoto", (req, res) => {
+  db.Galleries
+    .create({
+      imageURL: req.body.imageURL,
+      imagePrice: req.body.imagePrice,
+      imagePurchase: req.body.imagePurchase,
+    }).then(dbGalleries => res.json(dbGalleries))
+    .catch(err => res.json(err));
+})
+
+
  
 
 // Send every request to the React app
