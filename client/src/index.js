@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import Main from "./pages/Main"
 
+
 // Here is if we have an id_token in localStorage
 if(localStorage.getItem("id_token")) {
   // then we will attach it to the headers of each request from react application via axios
@@ -24,8 +25,8 @@ ReactDOM.render(
     <Router>
         <div>
             <Navbar />
-            <Route exact path="/Main" component={Main} />
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={Main} />
+            {/* <Route exact path="/login" component={App} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />

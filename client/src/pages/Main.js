@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import GalleryLinks from './../components/GalleryLinks';
+import ContactUs from './../components/ContactUs';
+
 import Navbar from "../components/Navbar"
 import Images from "../components/Images/chile.jpg"
 
@@ -11,6 +14,7 @@ class Main extends Component {
 
     render() {
         return (
+        <div>
             <section id="hero">
                 <div className="container">
                     <div className="hero-image">
@@ -23,6 +27,9 @@ class Main extends Component {
                     </div>
                 </div>
             </section>
+            <GalleryLinks />
+            <ContactUs />
+            </div>
         )
     }
 }
