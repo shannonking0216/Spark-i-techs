@@ -14,12 +14,7 @@ class Main extends Component {
 
     render() {
         return (
-            // <div>
-            
-            // <h1>Hello</h1>
-            // <GalleryLinks />
-            // <ContactUs />
-            // </div>
+        <div>
             <section id="hero">
                 <div className="container">
                     <div className="hero-image">
@@ -32,6 +27,9 @@ class Main extends Component {
                     </div>
                 </div>
             </section>
+            <GalleryLinks />
+            <ContactUs />
+            </div>
         )
     }
 }
