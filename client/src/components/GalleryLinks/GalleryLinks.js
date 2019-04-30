@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Images from "../Images/Images"
 
 class GalleryLinks extends Component {
     state = {
@@ -22,6 +23,8 @@ class GalleryLinks extends Component {
                     <h1 className="Nature">Nature Photos</h1>
                     <h1 className="Wedding">Wedding Photos </h1>
                     <h1 className="Misc">Misc Photos</h1>
+                    <Images />
+                    
                 </div>
             </div>
            

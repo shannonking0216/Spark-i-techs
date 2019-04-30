@@ -20,6 +20,11 @@ export default {
 
   },
 
+  getAllImagesOne: function (ImagesGalOne) {
+    return axios.get("/api/galleryone", ImagesGalOne)
+  },
+
+
 
 };
 
