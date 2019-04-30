@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import GalleryLinks from './../components/GalleryLinks';
 import ContactUs from './../components/ContactUs';
-//import image from "../../public/Images/adult-1867618_1280.jpg"
+
+import Navbar from "../components/Navbar"
+import Images from "../components/Images/chile.jpg"
+import PhotoCarousel from '../components/PhotoCarousel';
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -35,7 +38,7 @@ class Main extends Component {
                         <div className="row">
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                                
+
                                 <img src="https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
                             </div>
@@ -45,6 +48,7 @@ class Main extends Component {
                         <br></br>
                     </div>
                 </section>
+                <PhotoCarousel />
                 <br></br>
                 <GalleryLinks />
                 <ContactUs />
