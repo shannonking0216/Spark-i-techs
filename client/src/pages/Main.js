@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import GalleryLinks from './../components/GalleryLinks';
 import ContactUs from './../components/ContactUs';
-
-import Navbar from "../components/Navbar"
-import Images from "../components/Images/chile.jpg"
+//import image from "../../public/Images/adult-1867618_1280.jpg"
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -27,7 +25,27 @@ class Main extends Component {
                         </div>
                     </div>
                 </section>
-            
+
+                <section id="about-me" className="grad-dynamic">
+                    <div className="container text-center">
+                        <h3>Meet me</h3>
+                        <p><em>I love photography!</em></p>
+                        <p></p>
+                        <br></br>
+                        <div className="row">
+                            <div className="col-md-4"></div>
+                            <div className="col-md-4">
+                                <p><strong>Amanda Huggakiss</strong></p> <br></br>
+                                <img src="https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
+                                </img>
+                            </div>
+                            <div className="col-md-4"></div>
+                        </div>
+                        <br></br>
+                        <br></br>
+                    </div>
+                </section>
+                <br></br>
                 <GalleryLinks />
                 <ContactUs />
             </div>
