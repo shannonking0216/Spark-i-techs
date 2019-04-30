@@ -28,7 +28,10 @@ class Main extends Component {
                         </div>
                     </div>
                 </section>
-
+                <PhotoCarousel />
+                <br></br>
+                <GalleryLinks />
+                <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
                         <h3><strong>Amanda Huggakiss</strong></h3>
@@ -48,9 +51,6 @@ class Main extends Component {
                         <br></br>
                     </div>
                 </section>
-                <PhotoCarousel />
-                <br></br>
-                <GalleryLinks />
                 <ContactUs />
             </div>
         )
