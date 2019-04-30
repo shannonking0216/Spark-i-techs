@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-const nodemailer = require("nodemailer");
 
 class ContactList extends Component {
 
@@ -25,7 +24,7 @@ class ContactList extends Component {
                             <th>firstName</th>
                             <th>lastName</th>
                             <th>email</th>
-                            <th>comment</th>
+                            <th>message</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,7 +33,7 @@ class ContactList extends Component {
                                 <td>{contacts.firstName}</td>
                                 <td>{contacts.lastName}</td>
                                 <td>{contacts.email}</td>
-                                <td>{contacts.comment}</td>
+                                <td>{contacts.message}</td>
                             </tr>
                         ))}
                     </tbody>
