@@ -3,15 +3,18 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+const multer = require("multer");
 const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const PORT = process.env.PORT || 3001;
+
 
 const isAuthenticated = require("./config/isAuthenticated");
 const auth = require("./config/auth");
 
 // Setting CORS so that any website can
 // Access our API
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
@@ -94,6 +97,14 @@ app.get("/api/contactinfo", (req, res) => {
     }).then(dbContactUs => res.json(dbContactUs))
     .catch(err => res.json(err));
 })
+
+app.get("/api/galleryone", (req, res) => {
+  db.Galleries
+   .find({})
+   .then(dbGalleries => res.json(dbGalleries))
+   .catch(err => res.json(err));
+ });
+
 
 app.post("/api/newphoto", (req, res) => {
   db.Galleries

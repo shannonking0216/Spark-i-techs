@@ -39,7 +39,7 @@ class ContactUs extends Component {
                 <h1>Contact Us</h1>
                 <form>
                     <div className="form-group">
-                        <label htmlFor="name">First Name</label>
+                        <label htmlFor="First Name">First Name</label>
                         <input
                             type="text"
                             className="form-control"
@@ -50,7 +50,7 @@ class ContactUs extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="github">Last Name</label>
+                        <label htmlFor="Last Name">Last Name</label>
                         <input
                             type="text"
                             className="form-control"
@@ -61,7 +61,7 @@ class ContactUs extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="linkedin">Email</label>
+                        <label htmlFor="Email">Email</label>
                         <input
                             type="text"
                             className="form-control"
@@ -72,7 +72,7 @@ class ContactUs extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="linkedin">Comment</label>
+                        <label htmlFor="Comment">Comment</label>
                         <input
                             type="text"
                             className="form-control"
