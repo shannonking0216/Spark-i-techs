@@ -50,7 +50,7 @@ body {
 }
 @keyframes colors{
 from {background-color: lightblue}
-to {background-color: rgb(11, 94, 89)}
+to {background-color: lightgreen}
 to {background-color: lightsalmon}
 
 }

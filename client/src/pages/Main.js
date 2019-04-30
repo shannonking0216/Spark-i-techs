@@ -18,8 +18,8 @@ class Main extends Component {
                         <div className="hero-image">
                             <div className="hero-text text-light">
                                 <div className="starter-template">
-                                    <h1>The Amanda Section</h1>
-                                    <p className="lead">A brief discription of what the page is about</p>
+                                    <h1>Amanda's Picturesque Photography</h1>
+                                    <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
                                 </div>
                             </div>
                         </div>
@@ -28,14 +28,14 @@ class Main extends Component {
 
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
-                        <h3>Meet me</h3>
-                        <p><em>I love photography!</em></p>
+                        <h3><strong>Amanda Huggakiss</strong></h3>
+                        <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
                         <p></p>
                         <br></br>
                         <div className="row">
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                                <p><strong>Amanda Huggakiss</strong></p> <br></br>
+                                
                                 <img src="https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
                             </div>
