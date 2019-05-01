@@ -5,6 +5,7 @@ import ContactUs from './../components/ContactUs';
 import Navbar from "../components/Navbar"
 import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
+import NatureGallery from '../components/NatureGallery';
 import FooterLink from "../components/Footer"
 
 // import { Link } from 'react-router-dom';
@@ -32,6 +33,7 @@ class Main extends Component {
                 <PhotoCarousel />
                 <br></br>
                 <GalleryLinks />
+                <NatureGallery />
                 <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">

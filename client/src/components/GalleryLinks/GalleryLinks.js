@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Images from "../Images/Images"
 
+
+// This GalleryLinks component needs to be in the PhotoCarousel, so that
+// when the user clicks on a photo the gallery will show below
 class GalleryLinks extends Component {
     state = {
         contactList: []
@@ -19,17 +22,19 @@ class GalleryLinks extends Component {
     render() {
         return (
             <div className="PhotoGalleries">
-                <div className="myRow">
-                    <h1 className="Nature">Nature Photos</h1>
-                    <h1 className="Wedding">Wedding Photos </h1>
-                    <h1 className="Misc">Misc Photos</h1>
-                    <Images />
-                    
+                <div className="row">
+                {/* Put all links to the photo galleries below... use a tags */}
+                    <div className="myRow">
+                        <h1 className="Nature">Nature Photos</h1>
+                        <h1 className="Wedding">Engagement Photos </h1>
+                        <h1 className="Misc">Food Photos</h1>
+                        <Images />
+                    </div>
                 </div>
             </div>
-           
         )
     };
+
 }
 
 export default GalleryLinks;
