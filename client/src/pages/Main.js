@@ -55,7 +55,7 @@ class Main extends Component {
                     </div>
                 </section>
                 <ContactUs />
-                <FooterLink />
+                {/* <FooterLink /> */}
                 <section className="footer">
                 
                 </section>

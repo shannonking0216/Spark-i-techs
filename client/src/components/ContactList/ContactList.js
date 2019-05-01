@@ -21,8 +21,7 @@ class ContactList extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>firstName</th>
-                            <th>lastName</th>
+                            <th>name</th>
                             <th>email</th>
                             <th>message</th>
                         </tr>
@@ -30,8 +29,7 @@ class ContactList extends Component {
                     <tbody>
                         {this.state.contactList.map(contacts => (
                             <tr key={contacts._id}>
-                                <td>{contacts.firstName}</td>
-                                <td>{contacts.lastName}</td>
+                                <td>{contacts.name}</td>
                                 <td>{contacts.email}</td>
                                 <td>{contacts.message}</td>
                             </tr>
