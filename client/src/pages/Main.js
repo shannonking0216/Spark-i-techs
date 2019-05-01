@@ -5,6 +5,7 @@ import ContactUs from './../components/ContactUs';
 import Navbar from "../components/Navbar"
 import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
+import FooterLink from "../components/Footer"
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -52,6 +53,10 @@ class Main extends Component {
                     </div>
                 </section>
                 <ContactUs />
+                <FooterLink />
+                <section className="footer">
+                
+                </section>
             </div>
         )
     }
