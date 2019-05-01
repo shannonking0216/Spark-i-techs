@@ -160,16 +160,16 @@ app.get("/api/naturegallery", (req, res) => {
  });
 
  app.get("/api/engagementgallery", (req, res) => {
-  db.Galleries
+  db.EngagementGallery
    .find({})
-   .then(dbGalleries => res.json(dbGalleries))
+   .then(dbEngagementGallery => res.json(dbEngagementGallery))
    .catch(err => res.json(err));
  });
 
  app.get("/api/foodgallery", (req, res) => {
-  db.Galleries
+  db.FoodGallery
    .find({})
-   .then(dbGalleries => res.json(dbGalleries))
+   .then(dbFoodGallery => res.json(dbFoodGallery))
    .catch(err => res.json(err));
  });
 
@@ -187,22 +187,22 @@ app.post("/api/newnaturephoto", (req, res) => {
 })
 
 app.post("/api/newengagementphoto", (req, res) => {
-  db.Galleries
+  db.EngagementGallery
     .create({
       imageURL: req.body.imageURL,
       imagePrice: req.body.imagePrice,
       imagePurchase: req.body.imagePurchase,
-    }).then(dbGalleries => res.json(dbGalleries))
+    }).then(dbEngagementGallery => res.json(dbEngagementGallery))
     .catch(err => res.json(err));
 })
 
 app.post("/api/newfoodphoto", (req, res) => {
-  db.Galleries
+  db.FoodGallery
     .create({
       imageURL: req.body.imageURL,
       imagePrice: req.body.imagePrice,
       imagePurchase: req.body.imagePurchase,
-    }).then(dbGalleries => res.json(dbGalleries))
+    }).then(dbFoodGallery => res.json(dbFoodGallery))
     .catch(err => res.json(err));
 })
 
