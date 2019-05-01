@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Galleries from '../components/Galleries';
 import ContactUs from './../components/ContactUs';
 import NatureGallery from "../components/NatureGallery";
 
