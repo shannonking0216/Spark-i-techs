@@ -3,20 +3,20 @@ import API from "../../utils/API";
 
 class Images extends Component {
     state = {
-        imageGalleryOne: []
+        NatureGallery: []
     };
 
     componentDidMount() {
         API
-            .getAllImagesOne()
-            .then(response => this.setState({ imageGalleryOne: response.data }))
+            .getAllNatureImages()
+            .then(response => this.setState({ NatureGallery: response.data }))
             .catch(err => console.log(err));
     }
 
     render() {
         return (
             <div className="images">
-                        {this.state.imageGalleryOne.map(image => (
+                        {this.state.NatureGallery.map(image => (
                     
                             <img src={image.imageURL} height="200" width="200"/>
 

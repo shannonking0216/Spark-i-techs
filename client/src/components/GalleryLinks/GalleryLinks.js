@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Images from "../Images/Images"
+import Images from "../Images/NatureGallery"
 
 class GalleryLinks extends Component {
     state = {

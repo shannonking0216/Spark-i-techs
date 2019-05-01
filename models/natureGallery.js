@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const GalleriesSchema = new Schema({
+const NatureGallerySchema = new Schema({
     imageURL: { type: String, required: true },
     imagePrice: { type: String, required: true },
     imagePurchase: { type: Boolean, required: true },
@@ -14,6 +14,6 @@ const GalleriesSchema = new Schema({
 //     return emailRegex.test(email.text); // Assuming email has a text attribute
 //  }, 'The e-mail field cannot be empty.')
 
-const Galleries = mongoose.model('Galleries', GalleriesSchema);
+const NatureGallery = mongoose.model('NatureGallery', NatureGallerySchema);
 
-module.exports = Galleries;
+module.exports = NatureGallery;
