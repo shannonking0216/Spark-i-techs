@@ -19,7 +19,7 @@ class GalleryLinks extends Component {
     render() {
         return (
             <div className="PhotoGalleries">
-                <div className="row">
+                <div className="myRow">
                     <h1 className="Nature">Nature Photos</h1>
                     <h1 className="Wedding">Wedding Photos </h1>
                     <h1 className="Misc">Misc Photos</h1>

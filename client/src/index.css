@@ -4,6 +4,21 @@ body {
   font-family: 'Cinzel', serif;
 }
 
+.navbar {
+  position: absolute;
+top:0;
+  width:100%;
+}
+
+.container > svg {
+  font-size:12em;
+  color:white;
+}
+
+.navbar-toggler {
+  background:rgba(0, 0, 0, 0.15);
+}
+
 .navbar-dark .navbar-nav .nav-link {
   color: whitesmoke;
 }
@@ -11,9 +26,7 @@ body {
 .navbar-dark .navbar-brand {
   color: whitesmoke;
 }
-.navbar-dark{
-  background-color: black;
-}
+
 
 .starter-template {
   padding: 3rem 1.5rem;
@@ -25,7 +38,10 @@ body {
 }
 
 #hero {
-  background-image: url("./components/Images/kyoto-1976538_1280.jpg");
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  ), url("./components/Images/kyoto-1976538_1280.jpg");
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -34,6 +50,11 @@ body {
   height: 100%;
   width: 100%;
   z-index: -10;
+}
+
+.myRow {
+  display:flex;
+  justify-content: space-around;
 }
 /* .person {
   border: 10px solid transparent;
@@ -49,9 +70,10 @@ body {
 
 }
 @keyframes colors{
-from {background-color: lightblue}
-to {background-color: lightgreen}
-to {background-color: lightsalmon}
+0% {background-color: lightblue}
+25% {background-color: lightgreen}
+50% {background-color: lightsalmon}
+100% {background-color: lightblue}
 
 }
 
@@ -68,5 +90,6 @@ to {background-color: lightsalmon}
   float: center;
   
 }
+
 
 
