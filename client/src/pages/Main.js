@@ -5,6 +5,8 @@ import ContactUs from './../components/ContactUs';
 import Navbar from "../components/Navbar"
 import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
+import NatureGallery from '../components/NatureGallery';
+import FooterLink from "../components/Footer"
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -21,7 +23,7 @@ class Main extends Component {
                         <div className="hero-image">
                             <div className="hero-text text-light">
                                 <div className="starter-template">
-                                    <h1>Amanda's Picturesque Photography</h1>
+                                    <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
                                     <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
                                 </div>
                             </div>
@@ -30,7 +32,12 @@ class Main extends Component {
                 </section>
                 <PhotoCarousel />
                 <br></br>
+<<<<<<< HEAD
                 <Galleries />
+=======
+                <GalleryLinks />
+                <NatureGallery />
+>>>>>>> bb81a8ae3075ab1029b3f02683d9c2532a28bf76
                 <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
@@ -52,6 +59,10 @@ class Main extends Component {
                     </div>
                 </section>
                 <ContactUs />
+                <FooterLink />
+                <section className="footer">
+                
+                </section>
             </div>
         )
     }

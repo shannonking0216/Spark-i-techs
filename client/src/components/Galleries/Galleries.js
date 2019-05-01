@@ -10,16 +10,18 @@ class Galleries extends Component {
         return (
             <div className="PhotoGalleries">
                 <div className="row">
-                    <h1 className="Nature">Nature Photos</h1>
-                    <h1 className="Wedding">Wedding Photos </h1>
-                    <h1 className="Misc">Misc Photos</h1>
-                    <NatureGallery />
-                    
+                {/* Put all links to the photo galleries below... use a tags */}
+                    <div className="myRow">
+                        <h1 className="Nature">Nature Photos</h1>
+                        <h1 className="Wedding">Engagement Photos </h1>
+                        <h1 className="Misc">Food Photos</h1>
+                        <NatureGallery />
+                    </div>
                 </div>
             </div>
-           
         )
     };
+
 }
 
 export default Galleries;
