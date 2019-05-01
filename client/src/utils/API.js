@@ -20,9 +20,24 @@ export default {
 
   },
 
-  getAllImagesOne: function (ImagesGalOne) {
-    return axios.get("/api/galleryone", ImagesGalOne)
+  getAllNatureImages: function (NatureGallery) {
+    return axios.get("/api/naturegallery", NatureGallery)
   },
+
+    
+  
+  
+  
+  
+  
+  
+  uploadImage: (data) => {
+      console.log(data)
+  
+      // your code to interact with an image storage service goes here
+      return Promise.resolve('done')
+    }
+ 
 
 
 

@@ -1,13 +1,20 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const cloudinary = require('cloudinary')
 const path = require('path');
 const mongoose = require('mongoose');
-const multer = require("multer");
 const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 3001;
+
+cloudinary.config({ 
+  cloud_name: process.env.CLOUDINARY_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
+
 
 
 const isAuthenticated = require("./config/isAuthenticated");
@@ -144,7 +151,21 @@ app.get("/api/contactinfo", (req, res) => {
     .catch(err => res.json(err));
 })
 
-app.get("/api/galleryone", (req, res) => {
+app.get("/api/naturegallery", (req, res) => {
+  db.NatureGallery
+   .find({})
+   .then(dbNatureGallery => res.json(dbNatureGallery))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/engagementgallery", (req, res) => {
+  db.Galleries
+   .find({})
+   .then(dbGalleries => res.json(dbGalleries))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/foodgallery", (req, res) => {
   db.Galleries
    .find({})
    .then(dbGalleries => res.json(dbGalleries))
@@ -152,7 +173,29 @@ app.get("/api/galleryone", (req, res) => {
  });
 
 
-app.post("/api/newphoto", (req, res) => {
+
+
+app.post("/api/newnaturephoto", (req, res) => {
+  db.NatureGallery
+    .create({
+      imageURL: req.body.imageURL,
+      imagePrice: req.body.imagePrice,
+      imagePurchase: req.body.imagePurchase,
+    }).then(NatureGallery => res.json(NatureGallery))
+    .catch(err => res.json(err));
+})
+
+app.post("/api/newengagementphoto", (req, res) => {
+  db.Galleries
+    .create({
+      imageURL: req.body.imageURL,
+      imagePrice: req.body.imagePrice,
+      imagePurchase: req.body.imagePurchase,
+    }).then(dbGalleries => res.json(dbGalleries))
+    .catch(err => res.json(err));
+})
+
+app.post("/api/newfoodphoto", (req, res) => {
   db.Galleries
     .create({
       imageURL: req.body.imageURL,
