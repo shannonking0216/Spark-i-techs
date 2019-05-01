@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Galleries from '../components/Galleries';
 import ContactUs from './../components/ContactUs';
+import NatureGallery from "../components/NatureGallery";
 
-import Navbar from "../components/Navbar"
-import Images from "../components/Images/chile.jpg"
+// import Navbar from "../components/Navbar"
+// import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
-import NatureGallery from '../components/NatureGallery';
-import FooterLink from "../components/Footer"
+// import FooterLink from "../components/Footer"
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -32,12 +32,7 @@ class Main extends Component {
                 </section>
                 <PhotoCarousel />
                 <br></br>
-<<<<<<< HEAD
-                <Galleries />
-=======
-                <GalleryLinks />
                 <NatureGallery />
->>>>>>> bb81a8ae3075ab1029b3f02683d9c2532a28bf76
                 <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
@@ -59,7 +54,7 @@ class Main extends Component {
                     </div>
                 </section>
                 <ContactUs />
-                <FooterLink />
+                {/* <FooterLink /> */}
                 <section className="footer">
                 
                 </section>
