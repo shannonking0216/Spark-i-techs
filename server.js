@@ -207,8 +207,6 @@ app.post("/api/newfoodphoto", (req, res) => {
 })
 
 
-
-
  
 
 // Send every request to the React app

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GalleryLinks from './../components/GalleryLinks';
+import Galleries from '../components/Galleries';
 import ContactUs from './../components/ContactUs';
 
 import Navbar from "../components/Navbar"
@@ -30,7 +30,7 @@ class Main extends Component {
                 </section>
                 <PhotoCarousel />
                 <br></br>
-                <GalleryLinks />
+                <Galleries />
                 <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">

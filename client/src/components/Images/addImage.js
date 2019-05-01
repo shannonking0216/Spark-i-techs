@@ -25,16 +25,18 @@ class AddImage extends Component {
     imageURI: null
   }
 
-  fileInput = React.createRef()
+  fileInput = React.createRef();
 
   // this function gets the file chosen by the user and
   // calls our helper for uploading the image to images api
   handleSubmit = () => {
+    console.log(this.state)
     const file = this.fileInput.current.files[0]
 
     // build form data object to send to server
     const data = new FormData()
     data.append('image', file)
+    console.log(data)
 
     // send request to upload the file
     API.uploadImage(data)

@@ -1,19 +1,9 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
-import Images from "../Images/NatureGallery"
+// import API from "../../utils/API";
+import NatureGallery from "../Images/NatureGallery"
 
-class GalleryLinks extends Component {
-    state = {
-        contactList: []
-    };
-
-    componentDidMount() {
-        API
-            .getAllContacts()
-            .then(response => this.setState({ contactList: response.data }))
-            .catch(err => console.log(err));
-    }
-
+class Galleries extends Component {
+    
 
 
     render() {
@@ -23,7 +13,7 @@ class GalleryLinks extends Component {
                     <h1 className="Nature">Nature Photos</h1>
                     <h1 className="Wedding">Wedding Photos </h1>
                     <h1 className="Misc">Misc Photos</h1>
-                    <Images />
+                    <NatureGallery />
                     
                 </div>
             </div>
@@ -32,4 +22,4 @@ class GalleryLinks extends Component {
     };
 }
 
-export default GalleryLinks;
+export default Galleries;

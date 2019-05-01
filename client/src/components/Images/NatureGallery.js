@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-class Images extends Component {
+class NatureGallery extends Component {
     state = {
         NatureGallery: []
     };
@@ -41,4 +41,4 @@ class Images extends Component {
     // };
 
 
-export default Images;
+export default NatureGallery;
