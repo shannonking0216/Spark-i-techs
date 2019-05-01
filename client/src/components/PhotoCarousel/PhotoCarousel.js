@@ -67,7 +67,7 @@ class PhotoCarousel extends Component {
                         <p>Check out Amanda's Engagement Photography!</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-
+                
             </Carousel>
         );
     }
