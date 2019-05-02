@@ -66,9 +66,7 @@ top:0;
 .person:hover {
   border-color: #f1f1f1;
 } */
-.grad-dynamic {
 
-}
 @keyframes colors{
 0% {background-color: lightblue}
 25% {background-color: lightgreen}
@@ -90,6 +88,13 @@ top:0;
   float: center;
   
 }
+
+.container-footer {
+  background-color: whitesmoke;
+  
+}
+
+
 
 
 
