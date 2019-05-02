@@ -1,0 +1,24 @@
+.floating-label-form-group {
+    position: relative;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+    font-size: 1.5em;
+    position: relative;
+    z-index: 1;
+    padding-right: 0;
+    padding-left: 0;
+    resize: none;
+    border: none;
+    border-radius: 0;
+    background: 0 0;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.btn-primary {
+    background-color: lightsteelblue;
+    border-color: lightsteelblue;
+    width: 100%;
+}
