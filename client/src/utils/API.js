@@ -29,7 +29,7 @@ export default {
   },
 
   getAllFoodImages: function (FoodGallery) {
-    return axios.get("/api/newfoodphoto", FoodGallery)
+    return axios.get("/api/foodgallery", FoodGallery)
   },
 
   
