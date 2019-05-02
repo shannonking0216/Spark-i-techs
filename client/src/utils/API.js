@@ -20,6 +20,8 @@ export default {
 
   },
 
+  // **IMAGE GET ROUTES** //
+
   getAllNatureImages: function (NatureGallery) {
     return axios.get("/api/naturegallery", NatureGallery)
   },
@@ -32,7 +34,7 @@ export default {
     return axios.get("/api/foodgallery", FoodGallery)
   },
 
-
+// **IMAGE POST ROUTES** //
 
   uploadNatureImage: (data) => {
     return axios.post('/api/newnaturephoto', data);
@@ -44,6 +46,12 @@ export default {
 
   uploadFoodImage: (data) => {
     return axios.post('/api/newfoodphoto', data);
+  },
+
+  // **IMAGE DELETE ROUTES** //
+
+  deleteNatureImage: (fileName) => {
+    return axios.delete(`/api/${fileName}`);
   }
 
 

@@ -34,15 +34,15 @@ class DeleteImage extends Component {
 
   }
 
-  handleDeleteNatureImage = () => {
-    alert("Yay, the button works ")
+  handleDeleteNatureImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteNatureImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
   }
 
 
-  handleFileInputChange = (event) => {
-    this.setState({selectValue:event.target.value});
-    console.log("You selected" + this.state.selectValue)
-  }
 
 
 
@@ -69,7 +69,7 @@ class DeleteImage extends Component {
               {this.state.NatureGallery.map(image => (
                 <Dropdown.Item
                   value={this.state.selectValue}
-                  onClick={this.handleDeleteNatureImage}>
+                  onClick={() => this.handleDeleteNatureImage(image.fileName)}>
                   {image.fileName}
                 </Dropdown.Item>
               ))}
