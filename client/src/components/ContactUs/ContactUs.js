@@ -64,6 +64,7 @@ class ContactUs extends Component {
     render() {
         return (
             <div className="container">
+            <br/>
                 <h1 className="text-center text-uppercase text-secondary mb-0">Contact Us</h1>
                 <hr className="mb-5" />
                 <div className="row">
@@ -90,8 +91,12 @@ class ContactUs extends Component {
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label></label>
-                                    <input type="email" placeholder="Email Address" className="form-control" id="email" 
-                                    email="email"
+                                    <input 
+                                    type="email" 
+                                    placeholder="Email Address" 
+                                    className="form-control" 
+                                    id="email" 
+                                    name='email'
                                     onChange={this.handleInputChange}
                                     value={this.state.email}
                                     required />
@@ -103,7 +108,7 @@ class ContactUs extends Component {
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label></label>
                                     <textarea className="form-control" rows="5" id="message" placeholder="Message"
-                                    message="message"
+                                    name="message"
                                     onChange={this.handleInputChange}
                                     value={this.state.message}
                                     required></textarea>
@@ -112,6 +117,7 @@ class ContactUs extends Component {
                             </div>
                             <br/>
                             <button type="submit" className="btn btn-primary" style={{ width: 100, display: "block", margin: "0 auto" }} >SUBMIT</button>
+                            <br/>
 
                         </form>
                     </div>
