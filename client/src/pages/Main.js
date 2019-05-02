@@ -31,12 +31,12 @@ class Main extends Component {
                     </div>
                 </section>
                 <PhotoCarousel />
-                {/* <br></br> */}
-                {/* <NatureGallery />
+                <br></br>
+                <NatureGallery />
                 <br></br>
                 <EngagementGallery />
                 <br></br>
-                <FoodGallery /> */}
+                <FoodGallery />
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
                         <h3><strong>Amanda Huggakiss</strong></h3>
