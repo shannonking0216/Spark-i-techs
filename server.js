@@ -147,7 +147,7 @@ app.get("/api/contactinfo", (req, res) => {
     .create({
       name: req.body.name,
       email: req.body.email,
-      comment: req.body.comment,
+      message: req.body.comment,
     }).then(dbContactUs => res.json(dbContactUs))
     .catch(err => res.json(err));
 })
