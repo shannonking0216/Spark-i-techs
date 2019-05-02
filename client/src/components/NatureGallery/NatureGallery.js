@@ -74,7 +74,4 @@ export default NatureGallery;
 //     };
 // }
 
-
-
-
 // export default NatureGallery;

@@ -3,6 +3,7 @@ import nature from "../Images/carousel-nature.jpg"
 import food from "../Images/carousel-food.jpg"
 import engagement from "../Images/carousel-engagement.jpg"
 import Carousel from 'react-bootstrap/Carousel'
+import './PhotoCarousel.css'
 
 class PhotoCarousel extends Component {
     constructor(props, context) {
@@ -32,9 +33,9 @@ class PhotoCarousel extends Component {
                 direction={direction}
                 onSelect={this.handleSelect}
             >
-                <Carousel.Item>
+                <Carousel.Item className="photo-size"> 
                     <img
-                        className="d-block w-100"
+                        className="d-block w-100 photo-size"
                         src={nature}
                         alt="First slide"
                     />
@@ -44,9 +45,9 @@ class PhotoCarousel extends Component {
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item>
+                <Carousel.Item className="photo-size"> 
                     <img
-                        className="d-block w-100"
+                        className="d-block w-100 photo-size"
                         src={food}
                         alt="Third slide"
                     />
@@ -56,9 +57,9 @@ class PhotoCarousel extends Component {
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item>
+                <Carousel.Item className="photo-size"> 
                     <img
-                        className="d-block w-100"
+                        className="d-block w-100 photo-size"
                         src={engagement}
                         alt="Third slide"
                     />
