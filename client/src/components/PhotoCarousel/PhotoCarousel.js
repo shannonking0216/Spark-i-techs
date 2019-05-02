@@ -33,7 +33,7 @@ class PhotoCarousel extends Component {
                 direction={direction}
                 onSelect={this.handleSelect}
             >
-                <Carousel.Item className="photo-size"> 
+                <Carousel.Item className="photo-size" onClick={() => console.log("hello")}> 
                     <img
                         className="d-block w-100 photo-size"
                         src={nature}
