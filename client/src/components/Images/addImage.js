@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Button from 'react-bootstrap/Button'
+
 
 
 
@@ -11,7 +13,7 @@ import API from "../../utils/API";
 function ImageFilePreview({ src }) {
   return (
     <div className="pt-3" style={{ maxWidth: '200px' }}>
-    <h3>Preview:</h3>
+      <h3>Preview:</h3>
       <img className="img-fluid" src={src} alt="to upload" />
     </div>
   )
@@ -19,17 +21,15 @@ function ImageFilePreview({ src }) {
 
 class AddImage extends Component {
   state = {
-    // username: '',
-    // email: '',
     fileName: '',
-    imageURI: null
+    imageURL: null
   }
 
   fileInput = React.createRef();
 
   // this function gets the file chosen by the user and
   // calls our helper for uploading the image to images api
-  handleSubmit = () => {
+  handleSubmitNature = () => {
     console.log(this.state)
     const file = this.fileInput.current.files[0]
 
@@ -39,10 +39,38 @@ class AddImage extends Component {
     console.log(data)
 
     // send request to upload the file
-    API.uploadImage(data)
-  
+    API.uploadNatureImage(this.state)
 
   }
+
+  handleSubmitEngagement = () => {
+    console.log(this.state)
+    const file = this.fileInput.current.files[0]
+
+    // build form data object to send to server
+    const data = new FormData()
+    data.append('image', file)
+    console.log(data)
+
+    // send request to upload the file
+    API.uploadEngagementImage(this.state)
+
+  }
+
+
+  handleSubmitFood = () => {
+    const file = this.fileInput.current.files[0]
+
+    // build form data object to send to server
+    const data = new FormData()
+    data.append('image', file)
+    console.log(data)
+
+    // send request to upload the file
+    API.uploadFoodImage(this.state)
+
+  }
+
 
   handleFileUploadComplete = res => {
     console.log(res)
@@ -57,7 +85,7 @@ class AddImage extends Component {
     const file = this.fileInput.current.files[0]
     const reader = new FileReader()
     reader.onload = ({ target }) => {
-      this.setState({ imageURI: target.result, fileName: file.name })
+      this.setState({ imageURL: target.result, fileName: file.name })
     }
     reader.readAsDataURL(file)
   }
@@ -71,6 +99,7 @@ class AddImage extends Component {
         {/* image upload control and a preview of the chosen image */}
         <hr />
         <h2>Profile Image</h2>
+
         <div className="custom-file">
           <input
             ref={this.fileInput}
@@ -83,18 +112,30 @@ class AddImage extends Component {
             {this.state.fileName || 'Choose file'}
           </label>
         </div>
-        <div className="pt-3">
-          <button
-            type="submit"
-            className="btn btn-outline-primary btn-block pt-2"
-            onClick={this.handleSubmit}
-          >
-            Submit
-          </button>
-        </div>
+        <h3>Choose a Gallery to Upload Image to</h3>
+        <div>
         {this.state.imageURI ? (
           <ImageFilePreview src={this.state.imageURI} />
         ) : null}
+            <Button  
+            type="submit"
+            className="btn btn-outline-primary btn-block pt-2"
+            onClick={this.handleSubmitNature}
+            variant="outline-success">Nature Gallery</Button>
+
+            <Button variant="outline-danger" 
+            type="submit"
+            className="btn btn-outline-primary btn-block pt-2"
+            onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+
+            <Button 
+            variant="outline-warning" type="submit"
+            className="btn btn-outline-primary btn-block pt-2"
+            onClick={this.handleSubmitFood}>Food Gallery</Button>
+          
+         
+        </div>
+        
       </div>
     )
   }

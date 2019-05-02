@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EngagementGallerySchema = new Schema({
+    fileName: { type: String, required: true },
     imageURL: { type: String, required: true },
-    imagePrice: { type: String, required: true },
-    imagePurchase: { type: String, required: true },
-    
-
 });
 
 
