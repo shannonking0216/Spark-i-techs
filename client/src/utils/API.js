@@ -24,7 +24,14 @@ export default {
     return axios.get("/api/naturegallery", NatureGallery)
   },
 
-    
+  getAllEngagementImages: function (EngagementGallery) {
+    return axios.get("/api/engagementgallery", EngagementGallery)
+  },
+
+  getAllFoodImages: function (FoodGallery) {
+    return axios.get("/api/newfoodphoto", FoodGallery)
+  },
+
   
   
   
