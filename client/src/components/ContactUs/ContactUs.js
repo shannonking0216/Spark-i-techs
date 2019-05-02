@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 // import API from "../../utils/API";
 import axios from "axios";
+import "./ContactUs.css";
 
 class ContactUs extends Component {
 
-    // state = {
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     comment: ""
-    // };
+    state = {
+        name: "",
+        email: "",
+        message: ""
+    };
 
-    // handleInputChange = e => {
-    //     const { name, value } = e.target;
-    //     this.setState({ [name]: value });
-    // }
+    handleInputChange = e => {
+        console.log(e.target);
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+    }
 
 
     // handleFormSubmit = e => {
@@ -24,10 +25,9 @@ class ContactUs extends Component {
     //         .then(() => {
 
     //             this.setState({
-    //                 firstName: "",
-    //                 lastName: "",
+    //                 name: "",
     //                 email: "",
-    //                 comment: ""
+    //                 message: ""
     //             });
     //         }).catch(err => {
     //             console.log(err);
@@ -66,22 +66,56 @@ class ContactUs extends Component {
             <div className="container">
                 <h1 className="text-center text-uppercase text-secondary mb-0">Contact Us</h1>
                 <hr className="mb-5" />
+                <div className="row">
+                    <div className="col-lg-8 mx-auto">
 
-                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                    <div className="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" className="form-control" id="name" required />
+                        <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+
+                            <div className="control-group">
+                                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label></label>
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        id="name" 
+                                        placeholder="Name"
+                                        name="name"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.name}
+                                        required />
+                                    <p className="help-block text-danger">Please enter your name.</p>
+                                </div>
+                            </div>
+
+                            <div className="control-group">
+                                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label></label>
+                                    <input type="email" placeholder="Email Address" className="form-control" id="email" 
+                                    email="email"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.email}
+                                    required />
+                                    <p className="help-block text-danger">Please enter your email address.</p>
+                                </div>
+                            </div>
+
+                            <div className="control-group">
+                                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label></label>
+                                    <textarea className="form-control" rows="5" id="message" placeholder="Message"
+                                    message="message"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.message}
+                                    required></textarea>
+                                    <p className="help-block text-danger">Please enter a message.</p>
+                                </div>
+                            </div>
+                            <br/>
+                            <button type="submit" className="btn btn-primary" style={{ width: 100, display: "block", margin: "0 auto" }} >SUBMIT</button>
+
+                        </form>
                     </div>
-                    <div className="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" className="form-control" id="email" required aria-describedby="emailHelp" />
-                    </div>
-                    <div className="form-group">
-                        <label for="message">Message</label>
-                        <textarea className="form-control" rows="5" id="message" required></textarea>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                </div>
             </div>
         );
     };

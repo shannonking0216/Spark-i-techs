@@ -29,22 +29,23 @@ export default {
   },
 
   getAllFoodImages: function (FoodGallery) {
-    return axios.get("/api/newfoodphoto", FoodGallery)
+    return axios.get("/api/foodgallery", FoodGallery)
   },
 
-  
-  
-  
-  
-  
-  
-  uploadImage: (data) => {
-      console.log(data)
-  
-      // your code to interact with an image storage service goes here
-      return Promise.resolve('done')
-    }
- 
+
+
+  uploadNatureImage: (data) => {
+    return axios.post('/api/newnaturephoto', data);
+  },
+
+  uploadEngagementImage: (data) => {
+    return axios.post('/api/newengagementphoto', data);
+  },
+
+  uploadFoodImage: (data) => {
+    return axios.post('/api/newfoodphoto', data);
+  }
+
 
 
 
