@@ -204,19 +204,8 @@ app.post("/api/newfoodphoto", (req, res) => {
     .catch(err => res.json(err));
 });
 
-// app.post("/api/hdimageupload", (req, res) =>{
-//   db.NatureGallery
-//   .create({
-//     fileName: req.body.fileName,
-//     imageURL: req.body.imageURL,
-//   }).then(NatureGallery => res.json(NatureGallery))
-//   .catch(err => res.json(err));
-// });
 
- 
 
-// Send every request to the React app
-// Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

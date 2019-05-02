@@ -13,11 +13,12 @@ import Button from 'react-bootstrap/Button'
 function ImageFilePreview({ src }) {
   return (
     <div className="pt-3" style={{ maxWidth: '200px' }}>
-      <h3>Preview:</h3>
+      <h3>Image Preview:</h3>
       <img className="img-fluid" src={src} alt="to upload" />
     </div>
   )
 }
+
 
 class AddImage extends Component {
   state = {
@@ -36,10 +37,17 @@ class AddImage extends Component {
     // build form data object to send to server
     const data = new FormData()
     data.append('image', file)
-    console.log(data)
-
+    
     // send request to upload the file
     API.uploadNatureImage(this.state)
+    .then((data)=>{
+      console.log(data)
+      alert(`Image ${data.data.fileName} added!`)
+
+    })
+    .catch(err =>{
+      console.log(err);
+    })
 
   }
 
@@ -54,11 +62,18 @@ class AddImage extends Component {
 
     // send request to upload the file
     API.uploadEngagementImage(this.state)
-
+    .then((data)=>{
+      console.log(data)
+      alert(`Image ${data.data.fileName} added!`)
+    })
+    .catch(err =>{
+      console.log(err);
+    })
   }
 
 
   handleSubmitFood = () => {
+    console.log(this.state)
     const file = this.fileInput.current.files[0]
 
     // build form data object to send to server
@@ -68,26 +83,28 @@ class AddImage extends Component {
 
     // send request to upload the file
     API.uploadFoodImage(this.state)
-
+    .then((data)=>{
+      console.log(data)
+      alert(`Image ${data.data.fileName} added!`)
+    })
+    .catch(err =>{
+      console.log(err);
+    })
   }
 
 
-  handleFileUploadComplete = res => {
-    console.log(res)
-  }
 
-  handleFileUploadFail = error => {
-    console.log(error)
-  }
 
   // display a preview of the file selected by the user
-  handleFileInputChange = () => {
+  handleFileInputChange = (event) => {
     const file = this.fileInput.current.files[0]
     const reader = new FileReader()
     reader.onload = ({ target }) => {
       this.setState({ imageURL: target.result, fileName: file.name })
     }
-    reader.readAsDataURL(file)
+    if(file){
+      reader.readAsDataURL(file)
+    }
   }
 
 
@@ -112,11 +129,13 @@ class AddImage extends Component {
             {this.state.fileName || 'Choose file'}
           </label>
         </div>
-        <h3>Choose a Gallery to Upload Image to</h3>
-        <div>
-        {this.state.imageURI ? (
-          <ImageFilePreview src={this.state.imageURI} />
+        
+        {this.state.imageURL ? (
+          <ImageFilePreview src={this.state.imageURL} />
         ) : null}
+        <h5>Choose a Gallery to Upload Image to</h5>
+        <div>
+        
             <Button  
             type="submit"
             className="btn btn-outline-primary btn-block pt-2"
@@ -135,7 +154,6 @@ class AddImage extends Component {
           
          
         </div>
-        
       </div>
     )
   }
