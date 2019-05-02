@@ -3,7 +3,9 @@ import withAuth from './../components/withAuth';
 import API from './../utils/API';
 import { Link } from 'react-router-dom';
 import ContactList from './../components/ContactList';
-import AddImage from './../components/Images';
+import AddImage from '../components/AddImage';
+import DeleteImage from '../components/DeleteImage';
+
 
 class Profile extends Component {
 
@@ -29,6 +31,7 @@ class Profile extends Component {
         <p>Email: {this.state.email}</p>
         <Link to="/">Go home</Link>
         <AddImage />
+        <DeleteImage />
         <ContactList />
       </div>
     )

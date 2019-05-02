@@ -20,9 +20,32 @@ export default {
 
   },
 
-  getAllImagesOne: function (ImagesGalOne) {
-    return axios.get("/api/galleryone", ImagesGalOne)
+  getAllNatureImages: function (NatureGallery) {
+    return axios.get("/api/naturegallery", NatureGallery)
   },
+
+  getAllEngagementImages: function (EngagementGallery) {
+    return axios.get("/api/engagementgallery", EngagementGallery)
+  },
+
+  getAllFoodImages: function (FoodGallery) {
+    return axios.get("/api/foodgallery", FoodGallery)
+  },
+
+
+
+  uploadNatureImage: (data) => {
+    return axios.post('/api/newnaturephoto', data);
+  },
+
+  uploadEngagementImage: (data) => {
+    return axios.post('/api/newengagementphoto', data);
+  },
+
+  uploadFoodImage: (data) => {
+    return axios.post('/api/newfoodphoto', data);
+  }
+
 
 
 
