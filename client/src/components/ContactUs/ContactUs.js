@@ -5,16 +5,17 @@ import "./ContactUs.css";
 
 class ContactUs extends Component {
 
-    // state = {
-    //     name: "",
-    //     email: "",
-    //     message: ""
-    // };
+    state = {
+        name: "",
+        email: "",
+        message: ""
+    };
 
-    // handleInputChange = e => {
-    //     const { name, value } = e.target;
-    //     this.setState({ [name]: value });
-    // }
+    handleInputChange = e => {
+        console.log(e.target);
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+    }
 
 
     // handleFormSubmit = e => {
@@ -73,7 +74,15 @@ class ContactUs extends Component {
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label></label>
-                                    <input type="text" className="form-control" id="name" placeholder="Name" required />
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        id="name" 
+                                        placeholder="Name"
+                                        name="name"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.name}
+                                        required />
                                     <p className="help-block text-danger">Please enter your name.</p>
                                 </div>
                             </div>
@@ -81,7 +90,11 @@ class ContactUs extends Component {
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label></label>
-                                    <input type="email" placeholder="Email Address" className="form-control" id="email" required />
+                                    <input type="email" placeholder="Email Address" className="form-control" id="email" 
+                                    email="email"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.email}
+                                    required />
                                     <p className="help-block text-danger">Please enter your email address.</p>
                                 </div>
                             </div>
@@ -89,12 +102,16 @@ class ContactUs extends Component {
                             <div className="control-group">
                                 <div className="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label></label>
-                                    <textarea className="form-control" rows="5" id="message" placeholder="Message" required></textarea>
+                                    <textarea className="form-control" rows="5" id="message" placeholder="Message"
+                                    message="message"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.message}
+                                    required></textarea>
                                     <p className="help-block text-danger">Please enter a message.</p>
                                 </div>
                             </div>
                             <br/>
-                            <button type="submit" className="btn btn-primary" style={{ width: 100 }} >SUBMIT</button>
+                            <button type="submit" className="btn btn-primary" style={{ width: 100, display: "block", margin: "0 auto" }} >SUBMIT</button>
 
                         </form>
                     </div>
