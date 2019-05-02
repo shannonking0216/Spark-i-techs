@@ -94,7 +94,7 @@ top:0;
 }
 
 #andres {
-  color: darkred
+  color: blue
 }
 
 #shanon {
@@ -102,7 +102,7 @@ top:0;
 }
 
 #olga {
-  color: hotpink
+  color: red
 }
 
 #brandon{
@@ -116,19 +116,19 @@ top:0;
 
 
 .container-footer {
-  background-color: black;
+  background-color: aliceblue;
   
 }
 
 h2{
-  color: peachpuff;
+  color: black;
 }
 p {
-  color: white;
+  color: #6c757d;
 }
 
 i {
-  color: pink;
+  color: #6c757d;
 }
 
 

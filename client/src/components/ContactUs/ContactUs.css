@@ -1,3 +1,9 @@
+body {
+    background-color: aliceblue
+}
+
+h1 {margin-top: }
+
 .floating-label-form-group {
     position: relative;
     border-bottom: 1px solid #e9ecef;
