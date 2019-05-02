@@ -19,7 +19,9 @@ class Footer extends Component {
                     <div className="footer-row">
                         <div className="col-sm-4" >
                             <h2>Ready When You Are</h2>
+                            <br></br>
                             <p>Get in tounch</p>
+                            <br></br>
                             <a href="#" id="andres">ANDRES VALDES</a>
                             <br></br>
                             <a href="#" id="brandon">BRANDON HARRIS</a>
@@ -38,6 +40,8 @@ class Footer extends Component {
                         </div>
                         <div className="col-sm-4">
                             <h2>Catch me on:</h2>
+                            <br></br>
+                            <br></br>
                             <i class="fab fa-instagram fa-lg black mr-md-5 mr-3 fa-2x"> </i>
                             <i class="fab fa-twitter-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
                             <i class="fab fa-facebook-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
