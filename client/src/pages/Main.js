@@ -4,7 +4,8 @@ import GalleryContainer from "../components/GalleryContainer";
 // import Navbar from "../components/Navbar"
 // import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
-// import FooterLink from "../components/Footer"
+import FooterLink from "../components/Footer"
+
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
 
@@ -31,24 +32,26 @@ class Main extends Component {
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
                         <h3><strong>Amanda Huggakiss</strong></h3>
-                        <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
                         <p></p>
-                        <br></br>
+                        {/* <br></br> */}
                         <div className="row">
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-
                                 <img src="https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
+                                {/* <br></br> */}
+                        <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
                             </div>
                             <div className="col-md-4"></div>
                         </div>
                         <br></br>
-                        <br></br>
+                        
                     </div>
                 </section>
                 <ContactUs />
-                {/* <FooterLink /> */}
+                {/* <Footer /> */}
+                <br></br>
+                <FooterLink />
                 <section className="footer">
                 
                 </section>
