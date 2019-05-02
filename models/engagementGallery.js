@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const NatureGallerySchema = new Schema({
+const EngagementGallerySchema = new Schema({
     imageURL: { type: String, required: true },
     imagePrice: { type: String, required: true },
     imagePurchase: { type: String, required: true },
@@ -10,6 +10,6 @@ const NatureGallerySchema = new Schema({
 });
 
 
-const NatureGallery = mongoose.model('NatureGallery', NatureGallerySchema);
+const EngagementGallery = mongoose.model('EngagementGallery', EngagementGallerySchema);
 
-module.exports = NatureGallery;
+module.exports = EngagementGallery;

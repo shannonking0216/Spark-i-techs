@@ -20,13 +20,16 @@ class NatureGallery extends Component {
 
 
     render() {
-        return (
+        return (<div>
+             <h1>Nature Photos</h1>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
                 <Row>
                     <Col xs={12} md={8}>
                     {this.state.NatureGallery.map(image => (
+                        
                     <Image src={image.imageURL} thumbnail height="400" width="400" />
+                    
                     ))}
                     </Col>
                     {/* <Col xs={6} md={4}>
@@ -38,6 +41,7 @@ class NatureGallery extends Component {
                 {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                 
             </Container>
+            </div>
         );
     }
 }
