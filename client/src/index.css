@@ -10,6 +10,8 @@ top:0;
   width:100%;
 }
 
+/* .navbar-brand */
+
 .container > svg {
   font-size:12em;
   color:white;
@@ -17,6 +19,7 @@ top:0;
 
 .navbar-toggler {
   background:rgba(0, 0, 0, 0.15);
+  float: right;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -25,6 +28,7 @@ top:0;
 
 .navbar-dark .navbar-brand {
   color: whitesmoke;
+  float: left;
 }
 
 
@@ -66,9 +70,7 @@ top:0;
 .person:hover {
   border-color: #f1f1f1;
 } */
-.grad-dynamic {
 
-}
 @keyframes colors{
 0% {background-color: lightblue}
 25% {background-color: lightgreen}
@@ -90,6 +92,49 @@ top:0;
   float: center;
   
 }
+
+#andres {
+  color: darkred
+}
+
+#shanon {
+  color: purple
+}
+
+#olga {
+  color: hotpink
+}
+
+#brandon{
+  color: darkgreen
+}
+
+.footer-row {
+  display:flex;
+  justify-content: space-around;
+}
+
+
+.container-footer {
+  background-color: black;
+  
+}
+
+h2{
+  color: peachpuff;
+}
+p {
+  color: white;
+}
+
+i {
+  color: pink;
+}
+
+
+/* *{
+	border: 1px solid red
+} */
 
 
 
