@@ -33,7 +33,7 @@ class PhotoCarousel extends Component {
                 direction={direction}
                 onSelect={this.handleSelect}
             >
-                <Carousel.Item className="photo-size" onClick={() => console.log("hello")}> 
+                <Carousel.Item className="photo-size" onClick={() => console.log("nature")}> 
                     <img
                         className="d-block w-100 photo-size"
                         src={nature}
@@ -41,11 +41,11 @@ class PhotoCarousel extends Component {
                     />
                     <Carousel.Caption>
                         <h3>Nature Photo Gallery</h3>
-                        <p>Check out Amanda's Nature Photography!</p>
+                        <p>Click here to see Amanda's Nature Photography!</p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item className="photo-size"> 
+                <Carousel.Item className="photo-size" onClick={() => console.log("food")}> 
                     <img
                         className="d-block w-100 photo-size"
                         src={food}
@@ -53,11 +53,11 @@ class PhotoCarousel extends Component {
                     />
                     <Carousel.Caption>
                         <h3>Cullinary Photo Gallery</h3>
-                        <p>Check out Amanda's Culinary Photography!</p>
+                        <p>Click here to see Amanda's Culinary Photography!</p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item className="photo-size"> 
+                <Carousel.Item className="photo-size" onClick={() => console.log("engagement")}> 
                     <img
                         className="d-block w-100 photo-size"
                         src={engagement}
@@ -65,7 +65,7 @@ class PhotoCarousel extends Component {
                     />
                     <Carousel.Caption>
                         <h3>Engagement Photo Gallery</h3>
-                        <p>Check out Amanda's Engagement Photography!</p>
+                        <p>Click here to see Amanda's Engagement Photography!</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 
