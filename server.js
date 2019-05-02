@@ -145,8 +145,7 @@ app.get("/api/contactinfo", (req, res) => {
  app.post("/api/newcontact", (req, res) => {
   db.ContactUs
     .create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      name: req.body.name,
       email: req.body.email,
       comment: req.body.comment,
     }).then(dbContactUs => res.json(dbContactUs))
