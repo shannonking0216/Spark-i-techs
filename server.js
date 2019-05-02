@@ -152,6 +152,8 @@ app.get("/api/contactinfo", (req, res) => {
     .catch(err => res.json(err));
 })
 
+ // **IMAGE GET ROUTES** //
+
 app.get("/api/naturegallery", (req, res) => {
   db.NatureGallery
    .find({})
@@ -173,7 +175,7 @@ app.get("/api/naturegallery", (req, res) => {
    .catch(err => res.json(err));
  });
 
-
+ // **IMAGE POST ROUTES** //
 
 
 app.post("/api/newnaturephoto", (req, res) => {
@@ -203,8 +205,25 @@ app.post("/api/newfoodphoto", (req, res) => {
     .catch(err => res.json(err));
 });
 
-app.delete("/api/:fileName", (req, res) => {
+ // **IMAGE DELETE ROUTES** //
+
+
+app.delete("/api/nature/:fileName", (req, res) => {
   db.NatureGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(dbFile => res.json(dbFile))
+      .catch(err => res.json(err));
+});
+
+app.delete("/api/engagement/:fileName", (req, res) => {
+  db.EngagementGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(dbFile => res.json(dbFile))
+      .catch(err => res.json(err));
+});
+
+app.delete("/api/food/:fileName", (req, res) => {
+  db.FoodGallery
       .deleteOne({fileName: req.params.fileName})
       .then(dbFile => res.json(dbFile))
       .catch(err => res.json(err));
@@ -215,6 +234,8 @@ app.delete("/api/:fileName", (req, res) => {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+// ** SERVER START ** //
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

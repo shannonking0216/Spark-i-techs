@@ -43,6 +43,7 @@ class AddImage extends Component {
     .then((data)=>{
       console.log(data)
       alert(`Image ${data.data.fileName} added!`)
+      this.setState.fileName=""
 
     })
     .catch(err =>{

@@ -15,7 +15,6 @@ class DeleteImage extends Component {
     NatureGallery: [],
     EngagementGallery: [],
     FoodGallery: [],
-    selectValue: ""
   }
 
   componentDidMount() {
@@ -38,6 +37,22 @@ class DeleteImage extends Component {
     console.log(fileName)
     API
     .deleteNatureImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
+
+  handleDeleteEngagementImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteEngagementImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
+
+  handleDeleteFoodImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteFoodImage(fileName)
     .then(res => console.log(res))
     .catch(err => console.log(err));
   }
@@ -67,9 +82,7 @@ class DeleteImage extends Component {
               <Dropdown.Item>Nature Gallery</Dropdown.Item>
               <Dropdown.Divider />
               {this.state.NatureGallery.map(image => (
-                <Dropdown.Item
-                  value={this.state.selectValue}
-                  onClick={() => this.handleDeleteNatureImage(image.fileName)}>
+                <Dropdown.Item onClick={() => this.handleDeleteNatureImage(image.fileName)}>
                   {image.fileName}
                 </Dropdown.Item>
               ))}
@@ -77,12 +90,16 @@ class DeleteImage extends Component {
               <Dropdown.Item>Engagement Gallery</Dropdown.Item>
               <Dropdown.Divider />
               {this.state.EngagementGallery.map(image => (
-                <Dropdown.Item>{image.fileName}</Dropdown.Item>
+                <Dropdown.Item  onClick={() => this.handleDeleteEngagementImage(image.fileName)}>
+                >{image.fileName}
+                </Dropdown.Item>
               ))}
               <Dropdown.Item>Food Gallery</Dropdown.Item>
               <Dropdown.Divider />
               {this.state.FoodGallery.map(image => (
-                <Dropdown.Item>{image.fileName}</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.handleDeleteFoodImage(image.fileName)}>
+                {image.fileName}
+                </Dropdown.Item>
               ))}
             </DropdownButton>
           ))}

@@ -20,7 +20,7 @@ export default {
 
   },
 
-  // **IMAGE GET ROUTES** //
+  // **IMAGE GET ROUTE REDIRECTS** //
 
   getAllNatureImages: function (NatureGallery) {
     return axios.get("/api/naturegallery", NatureGallery)
@@ -34,7 +34,7 @@ export default {
     return axios.get("/api/foodgallery", FoodGallery)
   },
 
-// **IMAGE POST ROUTES** //
+// **IMAGE POST ROUTES REDIRECTS** //
 
   uploadNatureImage: (data) => {
     return axios.post('/api/newnaturephoto', data);
@@ -48,11 +48,21 @@ export default {
     return axios.post('/api/newfoodphoto', data);
   },
 
-  // **IMAGE DELETE ROUTES** //
+  // **IMAGE DELETE ROUTES REDIRECTS** //
 
   deleteNatureImage: (fileName) => {
-    return axios.delete(`/api/${fileName}`);
+    return axios.delete(`/api/nature/${fileName}`);
+  },
+
+  deleteEngagementImage: (fileName) => {
+    return axios.delete(`/api/engagement/${fileName}`);
+  },
+
+  deleteFoodImage: (fileName) => {
+    return axios.delete(`/api/food/${fileName}`);
   }
+
+
 
 
 
