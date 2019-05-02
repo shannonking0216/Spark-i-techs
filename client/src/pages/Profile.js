@@ -3,7 +3,7 @@ import withAuth from './../components/withAuth';
 import API from './../utils/API';
 import { Link } from 'react-router-dom';
 import ContactList from './../components/ContactList';
-import AddImage from '../components/Images';
+import AddImage from '../components/AddImage';
 import DeleteImage from '../components/DeleteImage';
 
 
