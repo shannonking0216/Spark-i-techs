@@ -4,6 +4,11 @@ import food from "../Images/carousel-food.jpg"
 import engagement from "../Images/carousel-engagement.jpg"
 import Carousel from 'react-bootstrap/Carousel'
 import './PhotoCarousel.css'
+// PhotoCarousel component is hosting all of the 3 Gallery components (imported below)..
+// ...and showing or hiding based upon onClick events attched to Carousel.Item components
+import NatureGallery from '../NatureGallery.js';
+import FoodGallery from '../FoodGallery.js';
+import EngagementGallery from '../EngagementGallery.js';
 
 class PhotoCarousel extends Component {
     constructor(props, context) {
@@ -14,13 +19,21 @@ class PhotoCarousel extends Component {
         this.state = {
             index: 0,
             direction: null,
+             // ishidden: true
         };
     }
+
+    // toggleHidden() {
+    //     this.setState({
+    //         isHIdden: !this.state.GalleryFood.isHidden
+    //     })
+    // }
 
     handleSelect(selectedIndex, e) {
         this.setState({
             index: selectedIndex,
             direction: e.direction,
+
         });
     }
 
@@ -75,6 +88,10 @@ class PhotoCarousel extends Component {
                     </Carousel.Caption>
                 </Carousel.Item>
                 
+            <NatureGallery />
+            <FoodGallery />
+            <EngagementGallery />
+
             </Carousel>
         );
     }
@@ -82,3 +99,27 @@ class PhotoCarousel extends Component {
 
 
 export default PhotoCarousel;
+
+
+// class ContainerGallery extends Component {
+//     // //  use props to tell which gallery component to show
+//     constructor(props) {
+//         super(props);
+//         this.state = {show: true}
+//       }
+//     // // onClick will register a gallery component to show.
+//     // // Which gallery component will show, will be based upon which carousel item was clicked
+    
+//         render() {
+//     // // switch staement to look at the value that comes in from the prop
+//             <GalleryFood />
+//             <GalleryEngagement />
+//             <GalleryNature />
+    
+//     //         // let activeGallery = whatever component you are wanting to show
+//             return (
+//                 {activeGallery}
+//             );
+//         }
+//     }
+//         export default ContainerGallery

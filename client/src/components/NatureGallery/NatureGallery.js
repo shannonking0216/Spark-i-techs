@@ -9,6 +9,7 @@ class NatureGallery extends Component {
 
     state = {
         NatureGallery: []
+         // ishidden: true
     };
 
     componentDidMount() {
