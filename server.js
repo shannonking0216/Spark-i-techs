@@ -203,6 +203,13 @@ app.post("/api/newfoodphoto", (req, res) => {
     .catch(err => res.json(err));
 });
 
+app.delete("/api/:fileName", (req, res) => {
+  db.NatureGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(() => res.redirect("/"))
+      .catch(err => res.json(err));
+});
+
 
 
 app.get("*", function(req, res) {
