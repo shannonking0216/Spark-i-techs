@@ -28,7 +28,12 @@ class NatureGallery extends Component {
                     <Col xs={12} md={8}>
                     {this.state.NatureGallery.map(image => (
                         
-                    <Image src={image.imageURL} thumbnail height="400" width="400" />
+                    <Image 
+                    
+                    src={image.imageURL} 
+                    thumbnail 
+                    height="400" 
+                    width="400" />
                     
                     ))}
                     </Col>
