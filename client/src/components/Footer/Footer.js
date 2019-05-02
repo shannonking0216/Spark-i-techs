@@ -14,6 +14,8 @@ class Footer extends Component {
         return (
             <div className="footer">
                 <div className="container-footer">
+            <br></br>
+            <br></br>
                     <div className="footer-row">
                         <div className="col-sm-4" >
                             <h2>Ready When You Are</h2>
