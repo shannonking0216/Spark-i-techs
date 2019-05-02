@@ -1,13 +1,20 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const cloudinary = require('cloudinary')
 const path = require('path');
 const mongoose = require('mongoose');
-const multer = require("multer");
 const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 3001;
+
+cloudinary.config({ 
+  cloud_name: process.env.CLOUDINARY_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
+
 
 
 const isAuthenticated = require("./config/isAuthenticated");
@@ -137,29 +144,64 @@ app.get("/api/contactinfo", (req, res) => {
  app.post("/api/newcontact", (req, res) => {
   db.ContactUs
     .create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      name: req.body.name,
       email: req.body.email,
       comment: req.body.comment,
     }).then(dbContactUs => res.json(dbContactUs))
     .catch(err => res.json(err));
 })
 
-app.get("/api/galleryone", (req, res) => {
-  db.Galleries
+app.get("/api/naturegallery", (req, res) => {
+  db.NatureGallery
    .find({})
-   .then(dbGalleries => res.json(dbGalleries))
+   .then(dbNatureGallery => res.json(dbNatureGallery))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/engagementgallery", (req, res) => {
+  db.EngagementGallery
+   .find({})
+   .then(dbEngagementGallery => res.json(dbEngagementGallery))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/foodgallery", (req, res) => {
+  db.FoodGallery
+   .find({})
+   .then(dbFoodGallery => res.json(dbFoodGallery))
    .catch(err => res.json(err));
  });
 
 
-app.post("/api/newphoto", (req, res) => {
-  db.Galleries
+
+
+app.post("/api/newnaturephoto", (req, res) => {
+  db.NatureGallery
     .create({
       imageURL: req.body.imageURL,
       imagePrice: req.body.imagePrice,
       imagePurchase: req.body.imagePurchase,
-    }).then(dbGalleries => res.json(dbGalleries))
+    }).then(NatureGallery => res.json(NatureGallery))
+    .catch(err => res.json(err));
+})
+
+app.post("/api/newengagementphoto", (req, res) => {
+  db.EngagementGallery
+    .create({
+      imageURL: req.body.imageURL,
+      imagePrice: req.body.imagePrice,
+      imagePurchase: req.body.imagePurchase,
+    }).then(dbEngagementGallery => res.json(dbEngagementGallery))
+    .catch(err => res.json(err));
+})
+
+app.post("/api/newfoodphoto", (req, res) => {
+  db.FoodGallery
+    .create({
+      imageURL: req.body.imageURL,
+      imagePrice: req.body.imagePrice,
+      imagePurchase: req.body.imagePurchase,
+    }).then(dbFoodGallery => res.json(dbFoodGallery))
     .catch(err => res.json(err));
 })
 

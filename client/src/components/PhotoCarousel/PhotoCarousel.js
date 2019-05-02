@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import nature from "../Images/carousel-nature.jpg"
 import food from "../Images/carousel-food.jpg"
 import engagement from "../Images/carousel-engagement.jpg"
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel'
 
 class PhotoCarousel extends Component {
     constructor(props, context) {
