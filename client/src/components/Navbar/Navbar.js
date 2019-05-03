@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AuthService from '../AuthService';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -45,8 +45,9 @@ class Navbar extends Component {
     };
 
     render() {
+        const {location:{pathname}} = this.props;
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark">
+            <nav className={`navbar ${pathname !== '/profile' ? 'navbar_main' : 'navbar_profile'} navbar-expand-lg navbar-dark`}>
                 <div className="container">
                     <Link className="navbar-brand" to="/">SPARK<FontAwesomeIcon icon={faFire}  />TECHS</Link>
                     
@@ -64,4 +65,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
