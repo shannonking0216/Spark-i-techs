@@ -59,35 +59,45 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolioDB', {useNewUrlParser: true, useCreateIndex: true})
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolioDB', { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
 app.post('/send', (req, res, next) => {
-    const name = req.body.name;
-    const email = req.body.email;
-    const message = req.body.message;
-    const content = `name: ${name} \n email: ${email} \n message: ${message}`;
-  
-    const mail = {
-      from: email,
-      to: "sparkitechs@gmail.com",  //Change to email address that you want to receive messages on
-      subject: 'New Message from Contact Form',
-      text: content
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
+  const content = `name: ${name} \n email: ${email} \n message: ${message}`;
+
+  const mail = {
+    from: email,
+    to: "sparkitechs@gmail.com",  //Change to email address that you want to receive messages on
+    subject: 'New Message from Contact Form',
+    text: content
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+      db.ContactUs
+        .create({
+          name: name,
+          email: email,
+          message: message,
+        }).then(dbContactUs => res.json(dbContactUs))
+        .catch(err => res.json(err));
+      
     }
-  
-    transporter.sendMail(mail, (err, data) => {
-      if (err) {
-        res.json({
-          msg: 'fail'
-        })
-      } else {
-        res.json({
-          msg: 'success'
-        })
-      }
-    })
   })
+
+})
+  
 
 // LOGIN ROUTE
 app.post('/api/login', (req, res) => {
@@ -108,10 +118,10 @@ app.post('/api/signup', (req, res) => {
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {
   db.User.findById(req.params.id).then(data => {
-    if(data) {
+    if (data) {
       res.json(data);
     } else {
-      res.status(404).send({success: false, message: 'No user found'});
+      res.status(404).send({ success: false, message: 'No user found' });
     }
   }).catch(err => res.status(400).send(err));
 });
@@ -137,12 +147,12 @@ app.use(function (err, req, res, next) {
 
 app.get("/api/contactinfo", (req, res) => {
   db.ContactUs
-   .find({})
-   .then(dbContactUs => res.json(dbContactUs))
-   .catch(err => res.json(err));
- });
+    .find({})
+    .then(dbContactUs => res.json(dbContactUs))
+    .catch(err => res.json(err));
+});
 
- app.post("/api/newcontact", (req, res) => {
+app.post("/api/newcontact", (req, res) => {
   db.ContactUs
     .create({
       name: req.body.name,
