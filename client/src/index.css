@@ -4,10 +4,14 @@ body {
   font-family: 'Cinzel', serif;
 }
 /* The navbar css */
-.navbar {
+.navbar_main {
   position: absolute;
 top:0;
   width:100%;
+}
+
+.navbar_profile {
+  background:green;
 }
 
 
@@ -53,6 +57,7 @@ top:0;
   height: 100%;
   width: 100%;
   z-index: -10;
+  border-bottom: 1px solid red;
 }
 /* carousel css */
 .photo-size {
@@ -60,6 +65,7 @@ top:0;
   width: 100%;
   z-index: -10;
 }
+
 
 #my-engagement {
   background-color: rgba(0,0,0,0.9
@@ -141,8 +147,23 @@ p {
   color: white;
 }
 
-i {
+#footer-con > i {
   color: pink;
+  transform:scale(1);
+  transition:all 0.5s cubic-bezier(.62,.01,.47,.81);
+}
+
+#footer-con > i:hover {
+  transform:scale(1.2);
+  box-shadow:3px 5px 5px rgba(255, 192,203,0.5);
+
+}
+
+#footer-con > i:active {
+  transform:scale(1);
+  box-shadow:3px 3px 1px rgba(255, 192,203,0.5);
+
+  
 }
 
 

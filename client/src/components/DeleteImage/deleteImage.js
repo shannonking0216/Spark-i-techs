@@ -14,24 +14,49 @@ class DeleteImage extends Component {
   state = {
     NatureGallery: [],
     EngagementGallery: [],
-    FoodGallery: []
+    FoodGallery: [],
   }
 
   componentDidMount() {
     API
-        .getAllNatureImages()
-        .then(response => this.setState({ NatureGallery: response.data }))
-        .catch(err => console.log(err));
+      .getAllNatureImages()
+      .then(response => this.setState({ NatureGallery: response.data }))
+      .catch(err => console.log(err));
     API
-        .getAllEngagementImages()
-        .then(response => this.setState({ EngagementGallery: response.data }))
-        .catch(err => console.log(err));
+      .getAllEngagementImages()
+      .then(response => this.setState({ EngagementGallery: response.data }))
+      .catch(err => console.log(err));
     API
-        .getAllFoodImages()
-        .then(response => this.setState({ FoodGallery: response.data }))
-        .catch(err => console.log(err));
+      .getAllFoodImages()
+      .then(response => this.setState({ FoodGallery: response.data }))
+      .catch(err => console.log(err));
 
-}
+  }
+
+  handleDeleteNatureImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteNatureImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
+
+  handleDeleteEngagementImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteEngagementImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
+
+  handleDeleteFoodImage = (fileName) => {
+    console.log(fileName)
+    API
+    .deleteFoodImage(fileName)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
+
 
 
 
@@ -42,40 +67,46 @@ class DeleteImage extends Component {
 
 
         <hr />
-        
+
         <h3>Remove an Image</h3>
         <div>
-       
-    {['down'].map(direction => (
-      <DropdownButton
-        drop={direction}
-        variant="secondary"
-        title={` Drop ${direction} `}
-        id={`dropdown-button-drop-${direction}`}
-        key={direction}
-      >
-        <Dropdown.Item>Nature Gallery</Dropdown.Item>
-        <Dropdown.Divider />
-        {this.state.NatureGallery.map(image => (
-        <Dropdown.Item>{image.fileName}</Dropdown.Item>
-        ))}
-        <Dropdown.Divider />
-        <Dropdown.Item>Engagement Gallery</Dropdown.Item>
-        <Dropdown.Divider />
-        {this.state.EngagementGallery.map(image => (
-        <Dropdown.Item>{image.fileName}</Dropdown.Item>
-        ))}
-        <Dropdown.Item>Food Gallery</Dropdown.Item>
-        <Dropdown.Divider />
-        {this.state.FoodGallery.map(image => (
-        <Dropdown.Item>{image.fileName}</Dropdown.Item>
-        ))}
-      </DropdownButton>
-    ))}
- 
-            
-          
-         
+
+          {['down'].map(direction => (
+            <DropdownButton
+              drop={direction}
+              variant="secondary"
+              title={` Drop ${direction} `}
+              id={`dropdown-button-drop-${direction}`}
+              key={direction}
+            >
+              <Dropdown.Item>Nature Gallery</Dropdown.Item>
+              <Dropdown.Divider />
+              {this.state.NatureGallery.map(image => (
+                <Dropdown.Item onClick={() => this.handleDeleteNatureImage(image.fileName)}>
+                  {image.fileName}
+                </Dropdown.Item>
+              ))}
+              <Dropdown.Divider />
+              <Dropdown.Item>Engagement Gallery</Dropdown.Item>
+              <Dropdown.Divider />
+              {this.state.EngagementGallery.map(image => (
+                <Dropdown.Item  onClick={() => this.handleDeleteEngagementImage(image.fileName)}>
+                >{image.fileName}
+                </Dropdown.Item>
+              ))}
+              <Dropdown.Item>Food Gallery</Dropdown.Item>
+              <Dropdown.Divider />
+              {this.state.FoodGallery.map(image => (
+                <Dropdown.Item onClick={() => this.handleDeleteFoodImage(image.fileName)}>
+                {image.fileName}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          ))}
+
+
+
+
         </div>
       </div>
     )

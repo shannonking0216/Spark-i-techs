@@ -16,14 +16,16 @@ class Main extends Component {
             <div>
                 <section id="hero">
                     <div className="container">
-                        <div className="hero-image">
-                            <div className="hero-text text-light">
-                                <div className="starter-template">
-                                    <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
-                                    <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
+                        
+                            <div className="hero-image">
+                                <div className="hero-text text-light">
+                                    <div className="starter-template">
+                                        <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
+                                        <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                 </section>
                 <PhotoCarousel />
@@ -36,16 +38,16 @@ class Main extends Component {
                         <div className="row">
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
-                            {/* <div className="amanda-image"></div> */}
+                                {/* <div className="amanda-image"></div> */}
                                 <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
                                 {/* <br></br> */}
-                        <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
+                                <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
                             </div>
                             <div className="col-md-4"></div>
                         </div>
                         <br></br>
-                        
+
                     </div>
                 </section>
                 <ContactUs />
@@ -53,7 +55,7 @@ class Main extends Component {
                 <br></br>
                 <FooterLink />
                 <section className="footer">
-                
+
                 </section>
             </div>
         )
