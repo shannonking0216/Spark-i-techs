@@ -71,7 +71,7 @@ class PhotoCarousel extends Component {
                 onSelect={this.handleSelect}
             >
                 <Carousel.Item className="photo-size" onClick={this.toggleHidden.bind(this)}>
-                    {!this.state.isHidden && <NatureGallery />}
+                   
                     <img
                         className="d-block w-100 photo-size"
                         src={nature}
@@ -82,6 +82,7 @@ class PhotoCarousel extends Component {
                         <h3>Nature Photo Gallery</h3>
                         <p>Click here to see Amanda's Nature Photography!</p>
                     </Carousel.Caption>
+                    {!this.state.isHidden && <NatureGallery />}
                 </Carousel.Item>
 
                 <Carousel.Item className="photo-size" >
