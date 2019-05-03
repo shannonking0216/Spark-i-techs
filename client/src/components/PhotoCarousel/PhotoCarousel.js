@@ -19,14 +19,7 @@ class PhotoCarousel extends Component {
         this.state = {
             index: 0,
             direction: null,
-            ishidden: false
         };
-    }
-
-    toggleHidden() {
-        this.setState({
-            isHidden: !this.state.isHidden
-        });
     }
 
     handleSelect(selectedIndex, e) {
@@ -70,20 +63,19 @@ class PhotoCarousel extends Component {
                 direction={direction}
                 onSelect={this.handleSelect}
             >
-                <Carousel.Item className="photo-size" onClick={this.toggleHidden.bind(this)}>
-                   
+                <Carousel.Item className="photo-size" >
+                    {/* this will be attached to the Carousel.Item ...onClick={this.props.handle("nature")} */}
                     <img
                         className="d-block w-100 photo-size"
                         src={nature}
                         alt="First slide"
-                        
                     />
                     <Carousel.Caption>
                         <h3>Nature Photo Gallery</h3>
                         <p>Click here to see Amanda's Nature Photography!</p>
                     </Carousel.Caption>
-                    {!this.state.isHidden && <NatureGallery />}
                 </Carousel.Item>
+               
 
                 <Carousel.Item className="photo-size" >
                 {/* // onClick={this.toggleHidden.bind(this)}>

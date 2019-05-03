@@ -4,31 +4,56 @@ import ContactUs from './../components/ContactUs';
 // import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
 import FooterLink from "../components/Footer"
+import NatureGallery from '../components/NatureGallery';
+import FoodGallery from '../components/FoodGallery';
+import EngagementGallery from '../components/EngagementGallery';
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
 
 
 class Main extends Component {
+    // constructor(props, context) {
+    //     super(props, context);
+
+    //     this.state = {
+    //         searchTerm: ""
+    //     };
+
+    // }
+
+    // handleImageSelect = searchTerm => {
+    //     this.setState({
+    //         searchTerm
+    //     });
+    //     console.log(searchTerm)
+    // }
 
     render() {
         return (
             <div>
                 <section id="hero">
                     <div className="container">
-                        
-                            <div className="hero-image">
-                                <div className="hero-text text-light">
-                                    <div className="starter-template">
-                                        <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
-                                        <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
-                                    </div>
+
+                        <div className="hero-image">
+                            <div className="hero-text text-light">
+                                <div className="starter-template">
+                                    <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
+                                    <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
                                 </div>
                             </div>
-                        
+                        </div>
+
                     </div>
                 </section>
+
                 <PhotoCarousel />
+                {/* this will go in the PhotoCarousel component above...handle={this.handleImageSelect}  */}
+                {/* then the following... */}
+                {/* { this.state.searchTerm === "nature" && <NatureGallery />}} */}
+                <NatureGallery />
+                <FoodGallery />
+                <EngagementGallery />
                 <br></br>
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
