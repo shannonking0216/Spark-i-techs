@@ -1,13 +1,22 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const cloudinary = require('cloudinary')
 const path = require('path');
 const mongoose = require('mongoose');
-const multer = require("multer");
+const bodyParser = require('body-parser');
 const morgan = require('morgan'); // used to see requests
 const db = require('./models');
 const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 3001;
+
+// cloudinary.config({ 
+//   cloud_name: process.env.CLOUDINARY_NAME, 
+//   api_key: process.env.CLOUDINARY_API_KEY, 
+//   api_secret: process.env.CLOUDINARY_SECRET 
+// });
+
+
 
 
 const isAuthenticated = require("./config/isAuthenticated");
@@ -32,10 +41,9 @@ transporter.verify((error, success) => {
   }
 });
 
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
-
-// Setting CORS so that any website can
-// Access our API
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -149,38 +157,96 @@ app.post("/api/newcontact", (req, res) => {
     .create({
       name: req.body.name,
       email: req.body.email,
-      message: req.body.message,
+      message: req.body.comment,
     }).then(dbContactUs => res.json(dbContactUs))
     .catch(err => res.json(err));
 })
 
-app.get("/api/galleryone", (req, res) => {
-  db.Galleries
-    .find({})
-    .then(dbGalleries => res.json(dbGalleries))
+ // **IMAGE GET ROUTES** //
+
+app.get("/api/naturegallery", (req, res) => {
+  db.NatureGallery
+   .find({})
+   .then(dbNatureGallery => res.json(dbNatureGallery))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/engagementgallery", (req, res) => {
+  db.EngagementGallery
+   .find({})
+   .then(dbEngagementGallery => res.json(dbEngagementGallery))
+   .catch(err => res.json(err));
+ });
+
+ app.get("/api/foodgallery", (req, res) => {
+  db.FoodGallery
+   .find({})
+   .then(dbFoodGallery => res.json(dbFoodGallery))
+   .catch(err => res.json(err));
+ });
+
+ // **IMAGE POST ROUTES** //
+
+
+app.post("/api/newnaturephoto", (req, res) => {
+  db.NatureGallery
+    .create({
+      fileName: req.body.fileName,
+      imageURL: req.body.imageURL,
+    }).then(NatureGallery => res.json(NatureGallery))
     .catch(err => res.json(err));
 });
 
-
-app.post("/api/newphoto", (req, res) => {
-  db.Galleries
+app.post("/api/newengagementphoto", (req, res) => {
+  db.EngagementGallery
     .create({
+      fileName: req.body.fileName,
       imageURL: req.body.imageURL,
-      imagePrice: req.body.imagePrice,
-      imagePurchase: req.body.imagePurchase,
-    }).then(dbGalleries => res.json(dbGalleries))
+    }).then(dbEngagementGallery => res.json(dbEngagementGallery))
     .catch(err => res.json(err));
-})
+});
+
+app.post("/api/newfoodphoto", (req, res) => {
+  db.FoodGallery
+    .create({
+      fileName: req.body.fileName,
+      imageURL: req.body.imageURL,
+    }).then(dbFoodGallery => res.json(dbFoodGallery))
+    .catch(err => res.json(err));
+});
+
+ // **IMAGE DELETE ROUTES** //
+
+
+app.delete("/api/nature/:fileName", (req, res) => {
+  db.NatureGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(dbFile => res.json(dbFile))
+      .catch(err => res.json(err));
+});
+
+app.delete("/api/engagement/:fileName", (req, res) => {
+  db.EngagementGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(dbFile => res.json(dbFile))
+      .catch(err => res.json(err));
+});
+
+app.delete("/api/food/:fileName", (req, res) => {
+  db.FoodGallery
+      .deleteOne({fileName: req.params.fileName})
+      .then(dbFile => res.json(dbFile))
+      .catch(err => res.json(err));
+});
 
 
 
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function (req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function () {
+// ** SERVER START ** //
+
+app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });

@@ -38,8 +38,7 @@ class PhotoCarousel extends Component {
                         className="d-block w-100 photo-size"
                         src={nature}
                         alt="First slide"
-                        // height="600" 
-                        // width="814"
+                        
                     />
                     <Carousel.Caption>
                         <h3>Nature Photo Gallery</h3>

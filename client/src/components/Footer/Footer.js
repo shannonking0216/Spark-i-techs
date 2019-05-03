@@ -38,7 +38,7 @@ class Footer extends Component {
                         <p>PARTNERSHIP</p>
                         <p>LEADERSHIP</p>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-sm-4" id="footer-con">
                             <h2>Catch me on:</h2>
                             <br></br>
                             <br></br>
