@@ -27,6 +27,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="container">
+       
         <Row>
         <Col sm={2}><h4>Welcome Back! {this.state.username}</h4></Col>
         <Col sm={8}></Col>
@@ -35,13 +36,14 @@ class Profile extends Component {
         <p>Email: {this.state.email}</p> */}
         </Row>
          <Row>
-          <Col sm={2}>
+          <Col className="profileCol2" sm={2}>
 
           <Link to="/">Go home</Link>
           </Col>
           <Col sm={10}><AddImage /> <DeleteImage /></Col>
+        
           </Row>
-       
+         
       </div>
 
 

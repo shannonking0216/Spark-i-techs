@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { MDBContainer } from 'mdbreact';
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 
@@ -35,6 +39,7 @@ class DeleteImage extends Component {
 
   handleDeleteNatureImage = (fileName) => {
     console.log(fileName)
+    prompt("Do you want to delete this image?") // pick back up here 
     API
     .deleteNatureImage(fileName)
     .then(res => console.log(res))
