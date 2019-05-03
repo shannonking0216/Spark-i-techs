@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
 import nature from "../Images/carousel-nature.jpg"
-import food from "../Images/carousel-food.jpg"
-import engagement from "../Images/carousel-engagement.jpg"
-
+import food from "../Images/grapes.jpg"
+import engagement from "../Images/engagment.jpg"
 import Carousel from 'react-bootstrap/Carousel'
 import './PhotoCarousel.css'
 
@@ -77,8 +76,8 @@ class PhotoCarousel extends Component {
                         className="d-block w-100 photo-size"
                         src={nature}
                         alt="First slide"
-                        height="600" 
-                        width="814"
+                        // height="600" 
+                        // width="814"
                     />
                     <Carousel.Caption>
                         <h3>Nature Photo Gallery</h3>
@@ -102,7 +101,7 @@ class PhotoCarousel extends Component {
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                <Carousel.Item className="photo-size" > 
+                <Carousel.Item className="photo-size" id="my-engagement"> 
                 {/* onClick={this.toggleHidden.bind(this)} */}
                     {/* {!this.state.isHidden && <EngagementGallery />} */}
                     <img
@@ -113,8 +112,8 @@ class PhotoCarousel extends Component {
                         width="814"
                     />
                     <Carousel.Caption>
-                        <h3>Engagement Photo Gallery</h3>
-                        <p>Click here to see Amanda's Engagement Photography!</p>
+                        <h3><strong>Engagement Photo Gallery</strong></h3>
+                        <p><strong>Check out Amanda's Engagement Photography!</strong></p>
                     </Carousel.Caption>
                 </Carousel.Item>
 

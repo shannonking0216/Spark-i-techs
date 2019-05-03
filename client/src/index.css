@@ -3,14 +3,13 @@ body {
   padding: 0;
   font-family: 'Cinzel', serif;
 }
-
+/* The navbar css */
 .navbar {
   position: absolute;
 top:0;
   width:100%;
 }
 
-/* .navbar-brand */
 
 .container > svg {
   font-size:12em;
@@ -36,7 +35,7 @@ top:0;
   padding: 3rem 1.5rem;
   text-align: center;
 }
-
+/* hero front page css */
 .hero-text {
   padding: 20% 2%;
 }
@@ -55,7 +54,20 @@ top:0;
   width: 100%;
   z-index: -10;
 }
+/* carousel css */
+.photo-size {
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}
 
+#my-engagement {
+  background-color: rgba(0,0,0,0.9
+
+  );
+}
+
+/* about me css */
 .myRow {
   display:flex;
   justify-content: space-around;
@@ -83,31 +95,33 @@ top:0;
   animation: colors 10s infinite;
 }
 
-#amanda {
-  /* background-image: url("./components/Images/adult-1867618_1280.jpg"); */
+#amanda{
+  background-image: url("./components/Images/Amanda.jpg");
   /* background-size: cover; */
-  height: 200px;
-  width: 200px;
+  background-size: auto;
+  height: 220px;
+  width: 220px;
   border-radius: 50%;
   float: center;
   
 }
 
+/* footer css */
 #andres {
-  color: darkred
-}
-
-#shanon {
-  color: purple
-}
-
-#olga {
-  color: hotpink
+  color: rgb(142, 247, 142);
 }
 
 #brandon{
   color: darkgreen
 }
+#shanon {
+  color: rgb(197, 38, 197)
+}
+
+#olga {
+  color: peachpuff;
+}
+
 
 .footer-row {
   display:flex;
