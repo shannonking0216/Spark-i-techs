@@ -4,6 +4,7 @@ import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import axios from "axios";
 
 // Our Components
@@ -12,6 +13,9 @@ import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import Main from "./pages/Main"
+import ErrorPage from "./pages/Errorpage"
+// import App from './App'
+
 
 
 // Here is if we have an id_token in localStorage
@@ -24,11 +28,14 @@ ReactDOM.render(
     <Router>
         <div>
             <Navbar />
+            <Switch>
             <Route exact path="/" component={Main} />
-            {/* <Route exact path="/login" component={App} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
+            <Route component={ErrorPage} />
+            </Switch>
+              {/* <Route exact path="/login" component={App} /> */}
         </div>
     </Router>
     , document.getElementById('root')
