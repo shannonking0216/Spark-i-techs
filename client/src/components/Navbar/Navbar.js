@@ -47,7 +47,7 @@ class Navbar extends Component {
     render() {
         const {location:{pathname}} = this.props;
         return (
-            <nav className={`navbar ${pathname !== '/profile' ? 'navbar_main' : 'navbar_profile'} navbar-expand-lg navbar-dark`}>
+            <nav className={`navbar ${pathname === '/' ? 'navbar_main' : 'navbar_profile'} navbar-expand-lg navbar-dark`}>
                 <div className="container">
                     <Link className="navbar-brand" to="/">SPARK<FontAwesomeIcon icon={faFire}  />TECHS</Link>
                     
