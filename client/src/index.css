@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Six+Caps');
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Cinzel', serif;
+  
 }
 /************* The navbar css ***************/
 .navbar_main {
   position: absolute;
-top:0;
+  top:0;
   width:100%;
 }
 
@@ -67,6 +70,10 @@ top:0;
 }
 
 /************* carousel css *************/
+.carousel-inner{
+  border-bottom: 1px solid rgb(6, 141, 204);
+}
+
 .photo-size {
   height: 100%;
   width: 100%;
@@ -132,19 +139,19 @@ top:0;
 
 
 .container-footer {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   
 }
 
 h2{
-  color: peachpuff;
+  color: rgb(255, 255, 255);
 }
 p {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 #footer-con > i {
-  color: pink;
+  color: rgb(240, 8, 8);
   transform:scale(1);
   transition:all 0.5s cubic-bezier(.62,.01,.47,.81);
 }

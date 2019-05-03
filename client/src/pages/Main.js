@@ -20,17 +20,17 @@ class Main extends Component {
             <div>
                 <section id="hero">
                     <div className="container">
-                        
-                            <div className="hero-image">
-                                <div className="hero-text text-light">
-                                    <div className="starter-template">
-                                        <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
-                                        <br></br>
-                                        <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
-                                    </div>
+
+                        <div className="hero-image">
+                            <div className="hero-text text-light">
+                                <div className="starter-template">
+                                    <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
+                                    <br></br>
+                                    <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
                                 </div>
                             </div>
-                        
+                        </div>
+
                     </div>
                 </section>
                 <PhotoCarousel />
@@ -42,22 +42,30 @@ class Main extends Component {
                 <FoodGallery />
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
+                        <br />
+                        <br />
                         <h3><strong>Amanda Huggakiss</strong></h3>
                         <p></p>
+                        <br />
+                        <br />
                         {/* <br></br> */}
                         <div className="row">
+                            <br />
+                            <br />
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
                                 {/* <div className="amanda-image"></div> */}
                                 <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
-                                {/* <br></br> */}
-                                <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <p><em><strong>"Photography takes an instant out of time, altering life by holding it still."</strong></em></p>
                             </div>
                             <div className="col-md-4"></div>
                         </div>
                         <br></br>
-
                     </div>
                 </section>
                 <ContactUs />
