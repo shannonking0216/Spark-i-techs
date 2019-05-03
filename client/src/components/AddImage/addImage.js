@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Button from 'react-bootstrap/Button'
+import { MDBContainer } from 'mdbreact';
 
 
 
@@ -112,11 +113,12 @@ class AddImage extends Component {
   render() {
     return (
       <div className="container AddImage">
+       <MDBContainer>
 
 
         {/* image upload control and a preview of the chosen image */}
         <hr />
-        <h2>Profile Image</h2>
+        <h2>Add an Image</h2>
 
         <div className="custom-file">
           <input
@@ -155,6 +157,7 @@ class AddImage extends Component {
           
          
         </div>
+        </MDBContainer>
       </div>
     )
   }
