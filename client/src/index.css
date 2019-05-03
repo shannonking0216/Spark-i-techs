@@ -109,7 +109,7 @@ top:0;
 
 /************* footer css *************/
 #andres {
-  color: blue
+  color: rgb(142, 247, 142);
 }
 
 #brandon{
@@ -120,7 +120,7 @@ top:0;
 }
 
 #olga {
-  color: red
+  color: peachpuff;
 }
 
 
@@ -131,11 +131,12 @@ top:0;
 
 
 .container-footer {
-  background-color: aliceblue;
-  }
+  background-color: black;
+  
+}
 
 h2{
-  color: black;
+  color: peachpuff;
 }
 p {
   color: white;
