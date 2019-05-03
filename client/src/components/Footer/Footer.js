@@ -42,7 +42,7 @@ class Footer extends Component {
                             <h2>Catch me on:</h2>
                             <br></br>
                             <br></br>
-                            <i class="fab fa-instagram fa-lg black mr-md-5 mr-3 fa-2x"> </i>
+                            <i class="fab fa-instagram fa-lg text-body mr-md-5 mr-3 fa-2x"> </i>
                             <i class="fab fa-twitter-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
                             <i class="fab fa-facebook-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
 

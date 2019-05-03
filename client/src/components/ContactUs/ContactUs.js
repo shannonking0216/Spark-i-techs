@@ -66,7 +66,7 @@ class ContactUs extends Component {
         return (
             <div className="container">
                 <br />
-                <h1 className="text-center text-uppercase text-secondary mb-0">Contact Us</h1>
+                <h1 className="text-center text-uppercase text-secondary mb-0 mt-5">Contact Us</h1>
                 <hr className="mb-5" />
                 <div className="row">
                     <div className="col-lg-8 mx-auto">
@@ -117,7 +117,7 @@ class ContactUs extends Component {
                                 </div>
                             </div>
                             <br />
-                            <button type="submit" className="btn btn-primary" style={{ width: 100, display: "block", margin: "0 auto" }} >SUBMIT</button>
+                            <button type="submit" className="btn btn-primary" style={{ width: 100, display: "block", margin: "0 auto", marginBottom: "50px" }} >SUBMIT</button>
                             <br />
 
                         </form>
