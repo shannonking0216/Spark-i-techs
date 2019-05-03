@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: 'Cinzel', serif;
 }
-/* The navbar css */
+/************* The navbar css ***************/
 .navbar_main {
   position: absolute;
 top:0;
@@ -40,7 +40,7 @@ top:0;
   padding: 3rem 1.5rem;
   text-align: center;
 }
-/* hero front page css */
+/************* hero front page css *************/
 .hero-text {
   padding: 20% 2%;
 }
@@ -58,9 +58,15 @@ top:0;
   height: 100%;
   width: 100%;
   z-index: -10;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid rgb(7, 75, 7);
 }
-/* carousel css */
+
+/************* Profile page css *************/
+.container-profile {
+  background: rgba(0, 0, 0, 0.822)
+}
+
+/************* carousel css *************/
 .photo-size {
   height: 100%;
   width: 100%;
@@ -74,21 +80,11 @@ top:0;
   );
 }
 
-/* about me css */
+/************* about me css *************/
 .myRow {
   display:flex;
   justify-content: space-around;
 }
-/* .person {
-  border: 10px solid transparent;
-  margin-bottom: 25px;
-  width: 80%;
-  height: 80%;
-  opacity: 0.7;
-}
-.person:hover {
-  border-color: #f1f1f1;
-} */
 
 @keyframes colors{
 0% {background-color: lightblue}
@@ -104,7 +100,6 @@ top:0;
 
 #amanda{
   background-image: url("./components/Images/Amanda.jpg");
-  /* background-size: cover; */
   background-size: auto;
   height: 220px;
   width: 220px;
@@ -113,9 +108,9 @@ top:0;
   
 }
 
-/* footer css */
+/************* footer css *************/
 #andres {
-  color: blue
+  color: rgb(142, 247, 142);
 }
 
 #brandon{
@@ -126,7 +121,7 @@ top:0;
 }
 
 #olga {
-  color: red
+  color: peachpuff;
 }
 
 
@@ -137,11 +132,12 @@ top:0;
 
 
 .container-footer {
-  background-color: aliceblue;
-  }
+  background-color: black;
+  
+}
 
 h2{
-  color: black;
+  color: peachpuff;
 }
 p {
   color: white;

@@ -18,7 +18,9 @@ class ContactList extends Component {
         return (
             <div className="contacts">
                 <h1>Contacts</h1>
+                <br></br>
                 <table className="table">
+                <br></br>
                     <thead>
                         <tr>
                             <th>name</th>
@@ -33,7 +35,11 @@ class ContactList extends Component {
                                 <td>{contacts.email}</td>
                                 <td>{contacts.message}</td>
                             </tr>
+                           
                         ))}
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </tbody>
                 </table>
             </div>

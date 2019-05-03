@@ -137,6 +137,7 @@ class AddImage extends Component {
           <ImageFilePreview src={this.state.imageURL} />
         ) : null}
         <h5>Choose a Gallery to Upload Image to</h5>
+        <br></br>
         <div>
         
             <Button  
@@ -145,10 +146,13 @@ class AddImage extends Component {
             onClick={this.handleSubmitNature}
             variant="outline-success">Nature Gallery</Button>
 
+            <br></br>
+
             <Button variant="outline-danger" 
             type="submit"
             className="btn btn-outline-primary btn-block pt-2"
             onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+            <br></br>
 
             <Button 
             variant="outline-warning" type="submit"
