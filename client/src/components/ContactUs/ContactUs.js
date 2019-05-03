@@ -85,7 +85,7 @@ class ContactUs extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.name}
                                          />
-                                    <p className="help-block text-danger">Please enter your name.</p>
+                                    {/* <p className="help-block text-danger">Please enter your name.</p> */}
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@ class ContactUs extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.email}
                                         required />
-                                    <p className="help-block text-danger">Please enter your email address.</p>
+                                    {/* <p className="help-block text-danger">Please enter your email address.</p> */}
                                 </div>
                             </div>
 
@@ -113,7 +113,7 @@ class ContactUs extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.message}
                                         required></textarea>
-                                    <p className="help-block text-danger">Please enter a message.</p>
+                                    {/* <p className="help-block text-danger">Please enter a message.</p> */}
                                 </div>
                             </div>
                             <br />

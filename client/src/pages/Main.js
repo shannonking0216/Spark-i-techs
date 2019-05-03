@@ -34,12 +34,14 @@ class Main extends Component {
             <div>
                 <section id="hero">
                     <div className="container">
-
-                        <div className="hero-image">
-                            <div className="hero-text text-light">
-                                <div className="starter-template">
-                                    <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
-                                    <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
+                        
+                            <div className="hero-image">
+                                <div className="hero-text text-light">
+                                    <div className="starter-template">
+                                        <h1 className="font-weight-bold">Amanda's Picturesque Photography</h1>
+                                        <br></br>
+                                        <p className="lead">Welcome to my professional photography page! Here you can peruse through my work and see the world through my eyes. Feel free to contact me about any inquiries.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
