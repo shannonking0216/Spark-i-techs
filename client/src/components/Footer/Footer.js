@@ -20,13 +20,16 @@ class Footer extends Component {
                         <div className="col-sm-4" >
                             <h2>Ready When You Are</h2>
                             <br></br>
-                            <p>Get in tounch</p>
-                            <br></br>
+                            <p>Get in tounch with our developers:</p>
+                           
                             <a href="#" id="andres">ANDRES VALDES</a>
+                            <br></br>
                             <br></br>
                             <a href="#" id="brandon">BRANDON HARRIS</a>
                             <br></br>
+                            <br></br>
                             <a href="#" id="shanon">SHANNON KING</a>
+                            <br></br>
                             <br></br>
                             <a href="#" id="olga">OLGA Karamyseva</a>
                         </div>
@@ -42,7 +45,7 @@ class Footer extends Component {
                             <h2>Catch me on:</h2>
                             <br></br>
                             <br></br>
-                            <i class="fab fa-instagram fa-lg text-body mr-md-5 mr-3 fa-2x"> </i>
+                            <i class="fab fa-google-plus-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
                             <i class="fab fa-twitter-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
                             <i class="fab fa-facebook-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
 

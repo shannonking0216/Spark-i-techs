@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Button from 'react-bootstrap/Button'
+import { MDBContainer } from 'mdbreact';
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 
@@ -12,8 +16,7 @@ import Button from 'react-bootstrap/Button'
 
 function ImageFilePreview({ src }) {
   return (
-    <div className="pt-3" style={{ maxWidth: '200px' }}>
-      <h3>Image Preview:</h3>
+    <div className="pt-3 dynamicImgCenter" style={{ maxWidth: '200px' }}>
       <img className="img-fluid" src={src} alt="to upload" />
     </div>
   )
@@ -37,18 +40,18 @@ class AddImage extends Component {
     // build form data object to send to server
     const data = new FormData()
     data.append('image', file)
-    
+
     // send request to upload the file
     API.uploadNatureImage(this.state)
-    .then((data)=>{
-      console.log(data)
-      alert(`Image ${data.data.fileName} added!`)
-      this.setState.fileName=""
+      .then((data) => {
+        console.log(data)
+        alert(`Image ${data.data.fileName} added!`)
+        this.setState.fileName = ""
 
-    })
-    .catch(err =>{
-      console.log(err);
-    })
+      })
+      .catch(err => {
+        console.log(err);
+      })
 
   }
 
@@ -63,13 +66,13 @@ class AddImage extends Component {
 
     // send request to upload the file
     API.uploadEngagementImage(this.state)
-    .then((data)=>{
-      console.log(data)
-      alert(`Image ${data.data.fileName} added!`)
-    })
-    .catch(err =>{
-      console.log(err);
-    })
+      .then((data) => {
+        console.log(data)
+        alert(`Image ${data.data.fileName} added!`)
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
 
@@ -84,13 +87,13 @@ class AddImage extends Component {
 
     // send request to upload the file
     API.uploadFoodImage(this.state)
-    .then((data)=>{
-      console.log(data)
-      alert(`Image ${data.data.fileName} added!`)
-    })
-    .catch(err =>{
-      console.log(err);
-    })
+      .then((data) => {
+        console.log(data)
+        alert(`Image ${data.data.fileName} added!`)
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
 
@@ -103,7 +106,7 @@ class AddImage extends Component {
     reader.onload = ({ target }) => {
       this.setState({ imageURL: target.result, fileName: file.name })
     }
-    if(file){
+    if (file) {
       reader.readAsDataURL(file)
     }
   }
@@ -111,54 +114,81 @@ class AddImage extends Component {
 
   render() {
     return (
-      <div className="container AddImage">
+      <div className="addImage">
+        <MDBContainer>
 
+          <span className="align-middle">
+            {/* image upload control and a preview of the chosen image */}
+            <hr />
+            <h2 className="AddImageHead">Add an Image</h2>
+            <Row>
+            <Col sm={4}></Col>
+            <Col sm={4}>
+            <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
+              <Card.Header>Image Preview</Card.Header>
 
-        {/* image upload control and a preview of the chosen image */}
-        <hr />
-        <h2>Profile Image</h2>
+              {this.state.imageURL ? (
+                <Row>
+                  <Col sm={2}></Col>
+                  <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
+                  <Col sm={2}></Col>
+                </Row>
+              ) : null}
+              <Card.Body>
+                <Card.Text>
+                  random text
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <br />
+            </Col>
+            <Col sm={4}></Col>
+            </Row>
+            <div className="custom-file">
+              <input
+                ref={this.fileInput}
+                type="file"
+                className="custom-file-input"
+                id="customFile"
+                onChange={this.handleFileInputChange}
+              />
+              <label className="custom-file-label" htmlFor="customFile">
+                {this.state.fileName || 'Choose file'}
+              </label>
+            </div>
 
-        <div className="custom-file">
-          <input
-            ref={this.fileInput}
-            type="file"
-            className="custom-file-input"
-            id="customFile"
-            onChange={this.handleFileInputChange}
-          />
-          <label className="custom-file-label" htmlFor="customFile">
-            {this.state.fileName || 'Choose file'}
-          </label>
-        </div>
-        
-        {this.state.imageURL ? (
-          <ImageFilePreview src={this.state.imageURL} />
-        ) : null}
-        <h5>Choose a Gallery to Upload Image to</h5>
-        <br></br>
-        <div>
-        
-            <Button  
-            type="submit"
-            className="btn btn-outline-primary btn-block pt-2"
-            onClick={this.handleSubmitNature}
-            variant="outline-success">Nature Gallery</Button>
-
+            <h5>Choose a Gallery to Upload Image to</h5>
             <br></br>
+            <div>
+            <Row>
+            <Col sm={4}>
+              <Button
+                variant="outline-primary"
+                type="submit"
+                className="btn btn-outline-primary  pt-2"
+                onClick={this.handleSubmitNature}>Nature Gallery</Button>
 
-            <Button variant="outline-danger" 
-            type="submit"
-            className="btn btn-outline-primary btn-block pt-2"
-            onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
-            <br></br>
+              <br></br>
+              </Col>
+              <Col sm={4}>
+              <Button 
+                variant="outline-primary"
+                type="submit"
+                className="btn btn-outline-primary  pt-2"
+                onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+              <br></br>
+              </Col>
+              <Col sm={4}>
+              <Button
+                variant="outline-primary" type="submit"
+                className="btn btn-outline-primary pt-2"
+                onClick={this.handleSubmitFood}>Food Gallery</Button>
+                </Col>
+             </Row>
 
-            <Button 
-            variant="outline-warning" type="submit"
-            className="btn btn-outline-primary btn-block pt-2"
-            onClick={this.handleSubmitFood}>Food Gallery</Button>
-          
-         
-        </div>
+            </div>
+          </span>
+        </MDBContainer>
       </div>
     )
   }
