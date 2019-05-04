@@ -13,6 +13,24 @@ import FooterLink from "../components/Footer"
 
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            shownGallery: null
+        };
+    }
+
+    handleImageClick = (targetClass, index) => {
+        if (targetClass === "carousel-inner") {
+            if (index === 0)
+                this.setState({ shownGallery: <NatureGallery /> })
+            else if (index === 1)
+                this.setState({ shownGallery: <FoodGallery /> })
+            else if (index === 2)
+                this.setState({ shownGallery: <EngagementGallery /> })
+        }
+    }
 
 
     render() {
@@ -32,14 +50,13 @@ class Main extends Component {
                         </div>
 
                     </div>
+
                 </section>
-                <PhotoCarousel />
+
+                <PhotoCarousel imgClick={this.handleImageClick} />
+                {this.state.shownGallery}
                 <br></br>
-                <NatureGallery />
-                <br></br>
-                <EngagementGallery />
-                <br></br>
-                <FoodGallery />
+
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
                         <br />
@@ -68,6 +85,7 @@ class Main extends Component {
                         <br></br>
                     </div>
                 </section>
+
                 <ContactUs />
                 {/* <Footer /> */}
                 <br></br>
@@ -75,7 +93,7 @@ class Main extends Component {
                 <section className="footer">
 
                 </section>
-            </div>
+            </div >
         )
     }
 }
