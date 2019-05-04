@@ -11,24 +11,24 @@ import EngagementGallery from '../components/EngagementGallery';
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
 
-
 class Main extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            searchTerm: ""
+            shownGallery: null
         };
     }
-    handleImageClick = searchTerm => {
-        alert('clicked');
-    }
-    handleImageSelect = searchTerm => {
-        alert(`clicked ${searchTerm}`);
-        this.setState({
-            searchTerm
-        });
-        console.log(searchTerm);
+
+    handleImageClick = (targetClass, index) => {
+        if (targetClass === "carousel-inner") {
+            if (index === 0)
+                this.setState({ shownGallery: <NatureGallery /> })
+            else if (index === 1)
+                this.setState({ shownGallery: <FoodGallery /> })
+            else if (index === 2)
+                this.setState({ shownGallery: <EngagementGallery /> })
+        }
     }
 
     render() {
@@ -50,41 +50,37 @@ class Main extends Component {
 
                 </section>
 
-            <PhotoCarousel />
-                {/* To dynamically reneder the 3 galleries... the line directly below should be inside of the PhotoCarousel Component element, directly above (and in the main.js) */}
-                {/* handle={this.handleImageSelect} handleClick = {this.handleImageClick} */}
-                {/* { this.state.searchTerm=== "nature" && <NatuareGallery />}} */}
-            <NatureGallery />
-            <FoodGallery />
-            <EngagementGallery />
-            <br></br>
-            <section id="about-me" className="grad-dynamic">
-                <div className="container text-center">
-                    <h3><strong>Amanda Huggakiss</strong></h3>
-                    <p></p>
-                    {/* <br></br> */}
-                    <div className="row">
-                        <div className="col-md-4"></div>
-                        <div className="col-md-4">
-                            {/* <div className="amanda-image"></div> */}
-                            <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
-                            </img>
-                            {/* <br></br> */}
-                            <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
+                <PhotoCarousel imgClick={this.handleImageClick} />
+                {this.state.shownGallery}
+                <br></br>
+
+                <section id="about-me" className="grad-dynamic">
+                    <div className="container text-center">
+                        <h3><strong>Amanda Huggakiss</strong></h3>
+                        <p></p>
+                        {/* <br></br> */}
+                        <div className="row">
+                            <div className="col-md-4"></div>
+                            <div className="col-md-4">
+                                {/* <div className="amanda-image"></div> */}
+                                <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
+                                </img>
+                                {/* <br></br> */}
+                                <p><em>Photography takes an instant out of time, altering life by holding it still.</em></p>
+                            </div>
+                            <div className="col-md-4"></div>
                         </div>
-                        <div className="col-md-4"></div>
+                        <br></br>
                     </div>
-                    <br></br>
+                </section>
 
-                </div>
-            </section>
-            <ContactUs />
-                {/* <Footer /> */ }
-        <br></br>
-            <FooterLink />
-            <section className="footer">
+                <ContactUs />
+                {/* <Footer /> */}
+                <br></br>
+                <FooterLink />
+                <section className="footer">
 
-            </section>
+                </section>
             </div >
         )
     }
