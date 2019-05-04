@@ -55,8 +55,8 @@ class PhotoCarousel extends Component {
                         width="814"
                     />
                     <Carousel.Caption>
-                        <h3>Cullinary Photo Gallery</h3>
-                        <p>Check out Amanda's Culinary Photography!</p>
+                        <h3><strong>Cullinary Photo Gallery</strong></h3>
+                        <p><strong>Check out Amanda's Culinary Photography!</strong></p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
