@@ -13,21 +13,23 @@ import EngagementGallery from '../components/EngagementGallery';
 
 
 class Main extends Component {
-    // constructor(props, context) {
-    //     super(props, context);
+    constructor(props) {
+        super(props);
 
-    //     this.state = {
-    //         searchTerm: ""
-    //     };
-
-    // }
-
-    // handleImageSelect = searchTerm => {
-    //     this.setState({
-    //         searchTerm
-    //     });
-    //     console.log(searchTerm)
-    // }
+        this.state = {
+            searchTerm: ""
+        };
+    }
+    handleImageClick = searchTerm => {
+        alert('clicked');
+    }
+    handleImageSelect = searchTerm => {
+        alert(`clicked ${searchTerm}`);
+        this.setState({
+            searchTerm
+        });
+        console.log(searchTerm);
+    }
 
     render() {
         return (
@@ -45,14 +47,14 @@ class Main extends Component {
                             </div>
                         </div>
                     </div>
-                    
+
                 </section>
 
             <PhotoCarousel />
-                {/* this will go in the PhotoCarousel component above...handle={this.handleImageSelect}  */ }
-        {/* then the following... */ }
-        {/* { this.state.searchTerm === "nature" && <NatureGallery />}} */ }
-        <NatureGallery />
+                {/* To dynamically reneder the 3 galleries... the line directly below should be inside of the PhotoCarousel Component element, directly above (and in the main.js) */}
+                {/* handle={this.handleImageSelect} handleClick = {this.handleImageClick} */}
+                {/* { this.state.searchTerm=== "nature" && <NatuareGallery />}} */}
+            <NatureGallery />
             <FoodGallery />
             <EngagementGallery />
             <br></br>
