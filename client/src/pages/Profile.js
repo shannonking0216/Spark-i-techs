@@ -4,15 +4,27 @@ import API from './../utils/API';
 import { Link } from 'react-router-dom';
 import AddImage from '../components/AddImage';
 import DeleteImage from '../components/DeleteImage';
+import ProfileCard from '../components/ProfileCards'
+import ProfileDefault from '../components/ProfileDefault'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCameraRetro, faImages} from '@fortawesome/free-solid-svg-icons'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+
+
+library.add(faCameraRetro, faImages)
 
 
 class Profile extends Component {
 
   state = {
     username: "",
-    email: ""
+    email: "",
+    profileReveal: false,
+    imageReveal: false,
+    deleteReveal: false,
   };
 
   componentDidMount() {
@@ -24,26 +36,50 @@ class Profile extends Component {
     });
   }
 
+  ProfileChangeClick = () => {
+    this.setState({ profileReveal: true, imageReveal: false, deleteReveal: false });
+  }
+
+  AddImageClick = () => {
+    this.setState({ profileReveal: false, imageReveal: true, deleteReveal: false });
+  }
+
+  DeleteImageClick = () => {
+    this.setState({ profileReveal: false, imageReveal: false, deleteReveal: true });
+  }
+
+
+
   render() {
     return (
-      <div className="container">
-       
-        <Row>
-        <Col sm={2}><h4>Welcome Back! {this.state.username}</h4></Col>
-        <Col sm={8}></Col>
-        <Col sm={2}>Page Visits: 10</Col>
+      <div >
+
+        <Row className="profileCol2">
+          <Col sm={2}><h4>Welcome Back! {this.state.username}</h4></Col>
+          <Col sm={8}></Col>
+          <Col sm={2}>Page Visits: 10</Col>
           {/* <p>Username: {this.state.username}</p>
         <p>Email: {this.state.email}</p> */}
         </Row>
-         <Row>
-          <Col className="profileCol2" sm={2}>
+        <Row className="profileCol2">
+          <Col sm={2}>
+            <p className="linkCol2" onClick={this.ProfileChangeClick}>Change Profile Pic</p>
+            <FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faImages} size="lg" />
+            <p className="linkCol2" onClick={this.AddImageClick}>Add Image to Gallery</p>
+            <p className="linkCol2" onClick={this.DeleteImageClick}>Delete Image from Gallery</p>
+            <p className="linkCol2">Change Image Price</p>
+            <Link to="/">Go home</Link>
 
-          <Link to="/">Go home</Link>
           </Col>
-          <Col sm={10}><AddImage /> <DeleteImage /></Col>
-        
-          </Row>
-         
+          <Col sm={10}>
+            {this.state.profileReveal ? <ProfileCard /> : null}
+            {this.state.imageReveal ? <AddImage /> : null}
+            {this.state.deleteReveal ? <DeleteImage /> : null}
+            {!this.state.profileReveal && !this.state.imageReveal && !this.state.deleteReveal ? <ProfileDefault /> : null}
+          </Col>
+
+        </Row>
+
       </div>
 
 

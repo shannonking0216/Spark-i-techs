@@ -5,7 +5,7 @@ import { MDBContainer } from 'mdbreact';
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import './style.css'
+
 
 
 
@@ -23,7 +23,9 @@ function ImageFilePreview({ src }) {
 }
 
 
-class AddImage extends Component {
+
+class ProfileCard extends Component {
+
   state = {
     fileName: '',
     imageURL: null
@@ -31,8 +33,6 @@ class AddImage extends Component {
 
   fileInput = React.createRef();
 
-  // this function gets the file chosen by the user and
-  // calls our helper for uploading the image to images api
   handleSubmitNature = () => {
     console.log(this.state)
     const file = this.fileInput.current.files[0]
@@ -56,53 +56,6 @@ class AddImage extends Component {
 
   }
 
-  handleSubmitEngagement = () => {
-    console.log(this.state)
-    const file = this.fileInput.current.files[0]
-
-    // build form data object to send to server
-    const data = new FormData()
-    data.append('image', file)
-    console.log(data)
-
-    // send request to upload the file
-    API.uploadEngagementImage(this.state)
-      .then((data) => {
-        console.log(data)
-        alert(`Image ${data.data.fileName} added!`)
-        window.location.reload();
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
-
-
-  handleSubmitFood = () => {
-    console.log(this.state)
-    const file = this.fileInput.current.files[0]
-
-    // build form data object to send to server
-    const data = new FormData()
-    data.append('image', file)
-    console.log(data)
-
-    // send request to upload the file
-    API.uploadFoodImage(this.state)
-      .then((data) => {
-        console.log(data)
-        alert(`Image ${data.data.fileName} added!`)
-        window.location.reload();
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
-
-
-
-
-  // display a preview of the file selected by the user
   handleFileInputChange = (event) => {
     const file = this.fileInput.current.files[0]
     const reader = new FileReader()
@@ -113,23 +66,17 @@ class AddImage extends Component {
       reader.readAsDataURL(file)
     }
   }
-
-
+  
   render() {
     return (
-      <div className="addImage">
+      <div className="profileCards">
         <MDBContainer>
-
           <span className="align-middle">
-            {/* image upload control and a preview of the chosen image */}
-            <hr />
-            <h2 className="AddImageHead">Add an Image</h2>
             <Row>
             <Col sm={4}></Col>
             <Col sm={4}>
             <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
-              <Card.Header>Image Preview</Card.Header>
-
+              <Card.Header>Profile Pic</Card.Header>
               {this.state.imageURL ? (
                 <Row>
                   <Col sm={2}></Col>
@@ -137,6 +84,7 @@ class AddImage extends Component {
                   <Col sm={2}></Col>
                 </Row>
               ) : null}
+
               <Card.Body>
                 <Card.Text>
                   
@@ -159,17 +107,9 @@ class AddImage extends Component {
                 {this.state.fileName || 'Choose file'}
               </label>
             </div>
-
-            <h5>Choose a Gallery to Upload Image to</h5>
-            <br></br>
-            <div>
             <Row>
             <Col sm={4}>
-              <Button
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitNature}>Nature Gallery</Button>
+              
 
               <br></br>
               </Col>
@@ -178,26 +118,22 @@ class AddImage extends Component {
                 variant="outline-primary"
                 type="submit"
                 className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+                onClick={this.handleSubmitEngagement}>Confirm Changes</Button>
               <br></br>
               </Col>
               <Col sm={4}>
-              <Button
-                variant="outline-primary" type="submit"
-                className="btn btn-outline-primary pt-2"
-                onClick={this.handleSubmitFood}>Food Gallery</Button>
+             
                 </Col>
              </Row>
 
-            </div>
+           
           </span>
-        </MDBContainer>
+          </MDBContainer>
+
       </div>
     )
   }
 }
 
 
-export default AddImage;
-
-// export default withAuth(AddImage)
+export default ProfileCard;
