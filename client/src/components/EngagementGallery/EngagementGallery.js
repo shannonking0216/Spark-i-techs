@@ -29,7 +29,7 @@ class EngagementGallery extends Component {
                    
                     {this.state.EngagementGallery.map(image => (
                         
-                    <Image src={image.imageURL} className="img-border" height="200" width="200" />
+                    <Image src={image.imageURL} className="img-border" />
                     
                     ))}
                    
