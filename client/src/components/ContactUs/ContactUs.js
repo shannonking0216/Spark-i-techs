@@ -64,7 +64,8 @@ class ContactUs extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container" id="container-contact">
+                <br />
                 <br />
                 <h1 className="text-center text-uppercase text-secondary mb-0 mt-5">Contact Us</h1>
                 <hr className="mb-5" />

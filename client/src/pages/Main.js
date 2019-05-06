@@ -7,6 +7,7 @@ import FoodGallery from "../components/FoodGallery";
 // import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
 import FooterLink from "../components/Footer"
+// import App from "../components/ScrollUp/scrollUp"
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -56,6 +57,8 @@ class Main extends Component {
                 <PhotoCarousel imgClick={this.handleImageClick} />
                 {this.state.shownGallery}
                 <br></br>
+
+                {/* <div id="app"></div> This is for the scroll up feature */}
 
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">
