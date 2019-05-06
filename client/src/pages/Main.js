@@ -52,7 +52,7 @@ class Main extends Component {
 
                 <PhotoCarousel imgClick={this.handleImageClick} />
                 {this.state.shownGallery}
-                <br></br>
+               
 
                 <ScrollUpButton />
 

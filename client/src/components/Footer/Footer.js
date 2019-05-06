@@ -25,10 +25,10 @@ class Footer extends Component {
                             <a href="https://www.linkedin.com/in/andres-valdes-48b80317a/" id="andres">ANDRES VALDES</a>
                             <br></br>
                             <br></br>
-                            <a href="#" id="brandon">BRANDON HARRIS</a>
+                            <a href="https://www.linkedin.com/in/brandon-harris-471bb932/" id="brandon">BRANDON HARRIS</a>
                             <br></br>
                             <br></br>
-                            <a href="#" id="shanon">SHANNON KING</a>
+                            <a href="https://www.linkedin.com/in/shannonking01/" id="shanon">SHANNON KING</a>
                             <br></br>
                             <br></br>
                             <a href="https://www.linkedin.com/in/olgakaramyseva/" id="olga">OLGA KARAMYSEVA</a>
