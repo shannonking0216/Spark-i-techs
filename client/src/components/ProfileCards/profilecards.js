@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 import { MDBContainer } from 'mdbreact';
-import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 

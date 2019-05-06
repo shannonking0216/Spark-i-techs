@@ -5,8 +5,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Cinzel', serif;
-  color: red;
+  /* font-family: 'Cinzel', serif; */
+
+  font-family: 'Montserrat', sans-serif;
+/* font-family: 'Crimson Text', serif; */
+  color: black;
 }
 /* ************ The navbar css ************** */
 .navbar_main {
@@ -105,8 +108,8 @@ body {
 
 @keyframes colors{
 0% {background-color: lightblue}
-25% {background-color: lightgreen}
-50% {background-color: lightsalmon}
+25% {background-color: lightcyan}
+50% {background-color: peachpuff}
 100% {background-color: lightblue}
 
 }
