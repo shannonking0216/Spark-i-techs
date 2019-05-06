@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ProfileUpdateSchema = new Schema({
-    imageUpdate: { type: String, required: true },
-    textUpdate: { type: String, required: true },
+    fileName: { type: String, required: true },
+    imageURL: { type: String, required: true },
+    profileText: { type: String, required: true },
   
 });
 

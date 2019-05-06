@@ -207,6 +207,14 @@ app.post("/api/newengagementphoto", (req, res) => {
     .catch(err => res.json(err));
 });
 
+app.post("/api/newfoodphoto", (req, res) => {
+  db.FoodGallery
+    .create({
+      fileName: req.body.fileName,
+      imageURL: req.body.imageURL,
+    }).then(dbFoodGallery => res.json(dbFoodGallery))
+    .catch(err => res.json(err));
+});
 
 
 
@@ -215,15 +223,16 @@ app.post("/api/newengagementphoto", (req, res) => {
 app.post("/api/profileupdate", (req, res) => {
   db.ProfileUpdate
     .create({
-      imageUpdate: req.body.imageUpdate,
-      textUpdate: req.body.textUpdate,
+      fileName: req.body.fileName,
+      imageURL: req.body.imageURL,
+      profileText: req.body.profileText,
     }).then(dbProfileUpdate => res.json(dbProfileUpdate))
     .catch(err => res.json(err));
 });
 
 // **PROFILE CARD UPDATE ROUTE** //
 
-app.put("/api/profilepicture/:id", (req, res) => {
+app.put("/api/profileupdate/:id", (req, res) => {
   db.ProfileUpdate
     .findOneAndUpdate(
       { _id: req.params.id }, 

@@ -6,11 +6,13 @@ import AddImage from '../components/AddImage';
 import DeleteImage from '../components/DeleteImage';
 import ProfileCard from '../components/ProfileCards'
 import ProfileDefault from '../components/ProfileDefault'
+import ProfilePic from '../components/ProfilePic'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCameraRetro, faImages} from '@fortawesome/free-solid-svg-icons'
+import { faCameraRetro, faImages, faUser, faTrashAlt, faHome} from '@fortawesome/free-solid-svg-icons'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 
@@ -54,21 +56,20 @@ class Profile extends Component {
     return (
       <div >
 
-        <Row className="profileCol2">
-          <Col sm={2}><h4>Welcome Back! {this.state.username}</h4></Col>
-          <Col sm={8}></Col>
-          <Col sm={2}>Page Visits: 10</Col>
-          {/* <p>Username: {this.state.username}</p>
-        <p>Email: {this.state.email}</p> */}
-        </Row>
+        
         <Row className="profileCol2">
           <Col sm={2}>
+            <h4>Welcome Back! {this.state.username}</h4>
+            <ProfilePic />
+            <br></br>
+            <FontAwesomeIcon className="faOnClick" onClick={this.ProfileChangeClick} icon={faUser} size="lg" />
             <p className="linkCol2" onClick={this.ProfileChangeClick}>Change Profile Pic</p>
             <FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faImages} size="lg" />
             <p className="linkCol2" onClick={this.AddImageClick}>Add Image to Gallery</p>
+            <FontAwesomeIcon className="faOnClick" onClick={this.DeleteImageClick} icon={faTrashAlt} size="lg" />
             <p className="linkCol2" onClick={this.DeleteImageClick}>Delete Image from Gallery</p>
-            <p className="linkCol2">Change Image Price</p>
-            <Link to="/">Go home</Link>
+            <div><Link to="/"><FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faHome} size="lg" /></Link></div>
+            <div><Link to="/">Go home</Link></div>
 
           </Col>
           <Col sm={10}>

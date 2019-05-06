@@ -28,25 +28,30 @@ class ProfileCard extends Component {
 
   state = {
     fileName: '',
-    imageURL: null
+    imageURL: null,
+    profileText: "",
+    
+
   }
 
   fileInput = React.createRef();
 
-  handleSubmitNature = () => {
+ 
+
+  handleProfileUpdate = () => {
     console.log(this.state)
     const file = this.fileInput.current.files[0]
 
     // build form data object to send to server
     const data = new FormData()
     data.append('image', file)
+    console.log(data)
 
     // send request to upload the file
-    API.uploadNatureImage(this.state)
+    API.updateProfileCard(this.state)
       .then((data) => {
         console.log(data)
         alert(`Image ${data.data.fileName} added!`)
-        this.setState.fileName = ""
         window.location.reload();
 
       })
@@ -56,7 +61,18 @@ class ProfileCard extends Component {
 
   }
 
+  handleTextInputChange = event => {
+    
+    const { name, value } = event.target;
+
+    
+    this.setState({
+      [name]: value
+    });
+  };
+
   handleFileInputChange = (event) => {
+   
     const file = this.fileInput.current.files[0]
     const reader = new FileReader()
     reader.onload = ({ target }) => {
@@ -66,34 +82,36 @@ class ProfileCard extends Component {
       reader.readAsDataURL(file)
     }
   }
-  
+
   render() {
     return (
       <div className="profileCards">
         <MDBContainer>
+        
           <span className="align-middle">
             <Row>
-            <Col sm={4}></Col>
-            <Col sm={4}>
-            <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
-              <Card.Header>Profile Pic</Card.Header>
-              {this.state.imageURL ? (
-                <Row>
-                  <Col sm={2}></Col>
-                  <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
-                  <Col sm={2}></Col>
-                </Row>
-              ) : null}
+              <Col sm={4}></Col>
+              <Col sm={4}>
+              <h3>Change Profile Card</h3>
+                <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
+                  <Card.Header>Profile Pic</Card.Header>
+                  {this.state.imageURL ? (
+                    <Row>
+                      <Col sm={2}></Col>
+                      <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
+                      <Col sm={2}></Col>
+                    </Row>
+                  ) : null}
 
-              <Card.Body>
-                <Card.Text>
-                  
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <br />
-            </Col>
-            <Col sm={4}></Col>
+                  <Card.Body>
+                    <Card.Text>
+
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <br />
+              </Col>
+              <Col sm={4}></Col>
             </Row>
             <div className="custom-file">
               <input
@@ -108,27 +126,27 @@ class ProfileCard extends Component {
               </label>
             </div>
             <Row>
+            <Col sm={4}></Col>
             <Col sm={4}>
-              
-
-              <br></br>
+              <input 
+                
+                value={this.state.profileText}
+                name="profileText"
+                placeholder="Profile Text"
+                onChange={this.handleTextInputChange}
+              />
+               
               </Col>
-              <Col sm={4}>
-              <Button 
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitEngagement}>Confirm Changes</Button>
-              <br></br>
-              </Col>
-              <Col sm={4}>
-             
-                </Col>
-             </Row>
-
-           
+              <Col sm={4}></Col>
+            </Row>
+            <Button
+              variant="outline-primary"
+              type="submit"
+              className="btn btn-outline-primary  pt-2"
+              onClick={this.handleProfileUpdate}>Confirm Changes</Button>
+            <br></br>
           </span>
-          </MDBContainer>
+        </MDBContainer>
 
       </div>
     )

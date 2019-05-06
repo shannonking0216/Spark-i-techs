@@ -60,8 +60,18 @@ export default {
 
   deleteFoodImage: (fileName) => {
     return axios.delete(`/api/food/${fileName}`);
-  }
+  },
 
+
+ // ** PROFILE UPDATE ROUTE ** //
+
+ getProfileImage: (profileObject) =>{
+  return axios.get('/api/profileupdate', profileObject)
+ },
+
+ updateProfileCard: (profileObject) => {
+   return axios.put(`/api/profilepicture/${profileObject}`); 
+ }
 
 
 
