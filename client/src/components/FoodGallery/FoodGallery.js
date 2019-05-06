@@ -21,7 +21,7 @@ class FoodGallery extends Component {
 
     render() {
         return (<div> 
-            <h1>Food Photos</h1>
+            <h1 text="centered" className="img-text" >Food Photos</h1>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
                 <Row>

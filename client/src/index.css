@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Cinzel', serif;
-  
+  color: red;
 }
 /* ************ The navbar css ************** */
 .navbar_main {
@@ -90,7 +90,13 @@ body {
 
   );
 }
-
+/************* photo gallery css *************/
+#food-photo{
+  text-align: center;
+}
+.img-text{
+  text-align: center;
+}
 /************* about me css *************/
 .myRow {
   display:flex;
@@ -130,14 +136,14 @@ body {
 }
 
 #brandon{
-  color: darkgreen
+  color: rgb(142, 247, 142);
 }
 #shanon {
-  color: rgb(197, 38, 197)
+  color: rgb(142, 247, 142);
 }
 
 #olga {
-  color: peachpuff;
+  color: rgb(142, 247, 142);
 }
 
 

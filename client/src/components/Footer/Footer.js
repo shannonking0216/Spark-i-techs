@@ -31,7 +31,7 @@ class Footer extends Component {
                             <a href="#" id="shanon">SHANNON KING</a>
                             <br></br>
                             <br></br>
-                            <a href="#" id="olga">OLGA KARAMYSEVA</a>
+                            <a href="https://www.linkedin.com/in/olgakaramyseva/" id="olga">OLGA KARAMYSEVA</a>
                         </div>
                         <div className="col-sm-4" id="middle">
                         <h2>ABOUT US</h2>
