@@ -122,27 +122,27 @@ class AddImage extends Component {
             <hr />
             <h2 className="AddImageHead">Add an Image</h2>
             <Row>
-            <Col sm={4}></Col>
-            <Col sm={4}>
-            <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
-              <Card.Header>Image Preview</Card.Header>
+              <Col sm={4}></Col>
+              <Col sm={4}>
+                <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
+                  <Card.Header>Image Preview</Card.Header>
 
-              {this.state.imageURL ? (
-                <Row>
-                  <Col sm={2}></Col>
-                  <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
-                  <Col sm={2}></Col>
-                </Row>
-              ) : null}
-              <Card.Body>
-                <Card.Text>
-                  random text
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <br />
-            </Col>
-            <Col sm={4}></Col>
+                  {this.state.imageURL ? (
+                    <Row>
+                      <Col sm={2}></Col>
+                      <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
+                      <Col sm={2}></Col>
+                    </Row>
+                  ) : null}
+                  <Card.Body>
+                    <Card.Text>
+                      random text
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <br />
+              </Col>
+              <Col sm={4}></Col>
             </Row>
             <div className="custom-file">
               <input
@@ -160,31 +160,31 @@ class AddImage extends Component {
             <h5>Choose a Gallery to Upload Image to</h5>
             <br></br>
             <div>
-            <Row>
-            <Col sm={4}>
-              <Button
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitNature}>Nature Gallery</Button>
+              <Row>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary"
+                    type="submit"
+                    className="btn btn-outline-primary  pt-2"
+                    onClick={this.handleSubmitNature}>Nature Gallery</Button>
 
-              <br></br>
-              </Col>
-              <Col sm={4}>
-              <Button 
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
-              <br></br>
-              </Col>
-              <Col sm={4}>
-              <Button
-                variant="outline-primary" type="submit"
-                className="btn btn-outline-primary pt-2"
-                onClick={this.handleSubmitFood}>Food Gallery</Button>
+                  <br></br>
                 </Col>
-             </Row>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary"
+                    type="submit"
+                    className="btn btn-outline-primary  pt-2"
+                    onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+                  <br></br>
+                </Col>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary" type="submit"
+                    className="btn btn-outline-primary pt-2"
+                    onClick={this.handleSubmitFood}>Food Gallery</Button>
+                </Col>
+              </Row>
 
             </div>
           </span>

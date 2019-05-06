@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import nature from "../Images/carousel-nature.jpg"
 import food from "../Images/grapes.jpg"
 import engagement from "../Images/engagment.jpg"
@@ -23,6 +24,7 @@ class PhotoCarousel extends Component {
             direction: e.direction,
         });
     }
+
 
     render() {
         const { index, direction } = this.state;
@@ -89,6 +91,5 @@ class PhotoCarousel extends Component {
         );
     }
 }
-
 
 export default PhotoCarousel;
