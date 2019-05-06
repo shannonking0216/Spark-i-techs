@@ -71,6 +71,7 @@ export default {
 
  updateProfileCard: (profileObjectId , profileBody) => {
    console.log(profileObjectId)
+   console.log(profileBody)
    return axios.put(`/api/profileupdate/${profileObjectId}`, profileBody); 
  }
 

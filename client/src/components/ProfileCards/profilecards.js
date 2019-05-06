@@ -26,22 +26,41 @@ function ImageFilePreview({ src }) {
 
 class ProfileCard extends Component {
 
+  // _isMounted = false;
+
   state = {
     fileName: '',
     imageURL: null,
     profileText: "",
-   
-
+    profileId: [],
+    // isLoading: true
   }
+
+   
+  componentDidMount() {
+    
+
+    API
+      .getProfileImage()
+      .then(response => this.setState(
+        { profileId: response.data 
+        
+        }
+        
+        ))
+      .catch(err => console.log(err));
+  }
+
 
   fileInput = React.createRef();
 
-  profileId = ""
-  
-  
 
-  handleProfileUpdate = () => {
-    console.log(this.state)
+ 
+
+  handleProfileUpdate = (profileInfo) => {
+
+     console.log(this.state)
+    const profileBody = this.state
     const file = this.fileInput.current.files[0]
 
     // build form data object to send to server
@@ -50,18 +69,19 @@ class ProfileCard extends Component {
     console.log(data)
 
     // send request to upload the file
-    API.updateProfileCard(this.state)
+    API.updateProfileCard(profileInfo, profileBody)
+    
       .then((data) => {
         console.log(data)
-        alert(`Image ${data.data.fileName} added!`)
-        // window.location.reload();
+        alert(`Profile Updated!`)
+        window.location.reload();
 
       })
       .catch(err => {
         console.log(err);
-      })
-
-  }
+      });
+    }
+  
 
   handleTextInputChange = event => {
     
@@ -142,11 +162,16 @@ class ProfileCard extends Component {
               </Col>
               <Col sm={4}></Col>
             </Row>
+            {this.state.profileId.map(profileInfo => (
             <Button
               variant="outline-primary"
               type="submit"
               className="btn btn-outline-primary  pt-2"
-              onClick={this.handleProfileUpdate}>Confirm Changes</Button>
+              onClick={() => this.handleProfileUpdate(profileInfo._id)}>Confirm Changes
+              
+              </Button>
+              ))}
+              
             <br></br>
           </span>
         </MDBContainer>
