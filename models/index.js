@@ -3,5 +3,6 @@ module.exports = {
   ContactUs: require('./contactus'),
   NatureGallery: require('./natureGallery'),
   EngagementGallery: require('./engagementGallery'),
-  FoodGallery: require('./foodGallery')
+  FoodGallery: require('./foodGallery'),
+  ProfileUpdate: require('./profileUpdate')
 };

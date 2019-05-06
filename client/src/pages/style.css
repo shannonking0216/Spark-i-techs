@@ -11,21 +11,26 @@ h1, p, .header {
 }
 
 .profileCol2{
-    background-color: black;
+   text-align: center;
+   margin-bottom: 100px;
 }
 
 .addImage , h3, .pt-3, .img-fluid {
 text-align: center;
 }
 
-.img-fluid {
-    /* position: fixed; */
-    /* center the element */
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    /* give it dimensions */
-    min-height: 10em;
-    width: 90%;
+p.linkCol2, .faOnClick {
+    cursor: pointer;
+      
+}
+
+h4 {
+    margin-bottom: 25px; 
+}
+
+.sideNav {
+    border-bottom-style: solid; 
+    border-right-style: solid;
+    border-left-style: solid; 
+    
 }

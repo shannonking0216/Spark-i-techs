@@ -84,6 +84,7 @@ class ContactUs extends Component {
                                         name="name"
                                         onChange={this.handleInputChange}
                                         value={this.state.name}
+                                        required
                                          />
                                     {/* <p className="help-block text-danger">Please enter your name.</p> */}
                                 </div>
