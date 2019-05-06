@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import API from "../../utils/API";
+import "./EngagementGallery.css";
 
 class EngagementGallery extends Component {
 
@@ -28,7 +29,7 @@ class EngagementGallery extends Component {
                    
                     {this.state.EngagementGallery.map(image => (
                         
-                    <Image src={image.imageURL}  height="200" width="200" />
+                    <Image src={image.imageURL} className="img-border" height="200" width="200" />
                     
                     ))}
                    
