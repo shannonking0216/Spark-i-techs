@@ -16,9 +16,6 @@ const PORT = process.env.PORT || 3001;
 //   api_secret: process.env.CLOUDINARY_SECRET 
 // });
 
-
-
-
 const isAuthenticated = require("./config/isAuthenticated");
 const auth = require("./config/auth");
 const creds = require("./config/email");
