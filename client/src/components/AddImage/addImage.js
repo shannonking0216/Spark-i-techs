@@ -123,7 +123,7 @@ class AddImage extends Component {
           <span className="align-middle">
             {/* image upload control and a preview of the chosen image */}
             <hr />
-            <h2 className="AddImageHead">Add an Image</h2>
+            <h3 className="AddImageHead">Add an Image</h3>
             <Row>
             <Col sm={4}></Col>
             <Col sm={4}>

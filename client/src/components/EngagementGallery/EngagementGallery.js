@@ -25,13 +25,13 @@ class EngagementGallery extends Component {
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
                 <Row>
-                    <Col xs={12} md={8}>
+                   
                     {this.state.EngagementGallery.map(image => (
                         
-                    <Image src={image.imageURL} thumbnail height="400" width="400" />
+                    <Image src={image.imageURL}  height="200" width="200" />
                     
                     ))}
-                    </Col>
+                   
                     {/* <Col xs={6} md={4}>
                        
                         <Image src="http://synbioconference.org/sites/default/files/styles/aiche_lead/public/images/conference/lead/shutterstock_503546536.jpeg?itok=2lOU4Ho2" thumbnail />

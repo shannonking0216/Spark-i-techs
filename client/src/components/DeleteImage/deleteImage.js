@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button'
 import { MDBContainer } from 'mdbreact';

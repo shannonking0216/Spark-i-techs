@@ -30,13 +30,15 @@ class ProfileCard extends Component {
     fileName: '',
     imageURL: null,
     profileText: "",
-    
+   
 
   }
 
   fileInput = React.createRef();
 
- 
+  profileId = ""
+  
+  
 
   handleProfileUpdate = () => {
     console.log(this.state)
@@ -52,7 +54,7 @@ class ProfileCard extends Component {
       .then((data) => {
         console.log(data)
         alert(`Image ${data.data.fileName} added!`)
-        window.location.reload();
+        // window.location.reload();
 
       })
       .catch(err => {
@@ -89,6 +91,7 @@ class ProfileCard extends Component {
         <MDBContainer>
         
           <span className="align-middle">
+          <hr />
             <Row>
               <Col sm={4}></Col>
               <Col sm={4}>

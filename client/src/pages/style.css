@@ -24,3 +24,13 @@ p.linkCol2, .faOnClick {
       
 }
 
+h4 {
+    margin-bottom: 25px; 
+}
+
+.sideNav {
+    border-bottom-style: solid; 
+    border-right-style: solid;
+    border-left-style: solid; 
+    
+}

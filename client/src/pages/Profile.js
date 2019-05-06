@@ -7,6 +7,7 @@ import DeleteImage from '../components/DeleteImage';
 import ProfileCard from '../components/ProfileCards'
 import ProfileDefault from '../components/ProfileDefault'
 import ProfilePic from '../components/ProfilePic'
+import { MDBContainer } from 'mdbreact';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCameraRetro, faImages, faUser, faTrashAlt, faHome} from '@fortawesome/free-solid-svg-icons'
@@ -55,13 +56,15 @@ class Profile extends Component {
   render() {
     return (
       <div >
-
+        <MDBContainer>
         
         <Row className="profileCol2">
-          <Col sm={2}>
-            <h4>Welcome Back! {this.state.username}</h4>
+          <Col className="sideNav" sm={2}>
+            <p>Welcome Back! </p>
+            <h5>{this.state.username}</h5>
+            <hr></hr>
             <ProfilePic />
-            <br></br>
+            <hr></hr>
             <FontAwesomeIcon className="faOnClick" onClick={this.ProfileChangeClick} icon={faUser} size="lg" />
             <p className="linkCol2" onClick={this.ProfileChangeClick}>Change Profile Pic</p>
             <FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faImages} size="lg" />
@@ -80,7 +83,7 @@ class Profile extends Component {
           </Col>
 
         </Row>
-
+        </MDBContainer>
       </div>
 
 
