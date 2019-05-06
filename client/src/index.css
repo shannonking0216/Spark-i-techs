@@ -1,12 +1,14 @@
+/************ The body css **************/
+
 @import url('https://fonts.googleapis.com/css?family=Six+Caps');
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Cinzel', serif;
-  
+  color: red;
 }
-/************* The navbar css ***************/
+/* ************ The navbar css ************** */
 .navbar_main {
   position: absolute;
   top:0;
@@ -30,6 +32,7 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
   color: whitesmoke;
+  float: right;
 }
 
 .navbar-dark .navbar-brand {
@@ -43,6 +46,7 @@ body {
   padding: 3rem 1.5rem;
   text-align: center;
 }
+
 /************* hero front page css *************/
 .hero-text {
   padding: 20% 2%;
@@ -61,7 +65,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -10;
-  border-bottom: 1px solid rgb(7, 75, 7);
+  border-bottom: 1px solid rgb(4, 44, 4);
 }
 
 /************* Profile page css *************/
@@ -86,7 +90,13 @@ body {
 
   );
 }
-
+/************* photo gallery css *************/
+#food-photo{
+  text-align: center;
+}
+.img-text{
+  text-align: center;
+}
 /************* about me css *************/
 .myRow {
   display:flex;
@@ -115,20 +125,25 @@ body {
   
 }
 
+/************* contact css *************/
+#container-contact{
+/* background-color: white */
+}
+
 /************* footer css *************/
 #andres {
   color: rgb(142, 247, 142);
 }
 
 #brandon{
-  color: darkgreen
+  color: rgb(142, 247, 142);
 }
 #shanon {
-  color: rgb(197, 38, 197)
+  color: rgb(142, 247, 142);
 }
 
 #olga {
-  color: peachpuff;
+  color: rgb(142, 247, 142);
 }
 
 
@@ -159,16 +174,15 @@ p {
 #footer-con > i:hover {
   transform:scale(1.2);
   box-shadow:3px 5px 5px rgba(255, 192,203,0.5);
-
 }
 
 #footer-con > i:active {
   transform:scale(1);
   box-shadow:3px 3px 1px rgba(255, 192,203,0.5);
-
-  
 }
-
+.footer-copyright {
+  color: white
+}
 
 
 

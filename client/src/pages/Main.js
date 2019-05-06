@@ -8,7 +8,7 @@ import FooterLink from "../components/Footer"
 import NatureGallery from '../components/NatureGallery';
 import FoodGallery from '../components/FoodGallery';
 import EngagementGallery from '../components/EngagementGallery';
- 
+import ScrollUpButton from "react-scroll-up-button";
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -38,7 +38,6 @@ class Main extends Component {
             <div>
                 <section id="hero">
                     <div className="container">
-
                         <div className="hero-image">
                             <div className="hero-text text-light">
                                 <div className="starter-template">
@@ -49,12 +48,13 @@ class Main extends Component {
                             </div>
                         </div>
                     </div>
-
                 </section>
 
                 <PhotoCarousel imgClick={this.handleImageClick} />
                 {this.state.shownGallery}
                 <br></br>
+
+                <ScrollUpButton />
 
                 <section id="about-me" className="grad-dynamic">
                     <div className="container text-center">

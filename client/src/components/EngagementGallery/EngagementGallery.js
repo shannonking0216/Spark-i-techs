@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import API from "../../utils/API";
+import "./EngagementGallery.css";
 
 class EngagementGallery extends Component {
 
@@ -21,14 +22,14 @@ class EngagementGallery extends Component {
 
     render() {
         return (<div> 
-            <h1>Engagement Photos</h1>
+            <h1 className="img-text">Engagement Photos</h1>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
                 <Row>
                    
                     {this.state.EngagementGallery.map(image => (
                         
-                    <Image src={image.imageURL}  height="200" width="200" />
+                    <Image src={image.imageURL} className="img-border" height="200" width="200" />
                     
                     ))}
                    

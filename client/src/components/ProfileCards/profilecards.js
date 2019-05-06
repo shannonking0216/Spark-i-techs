@@ -58,6 +58,7 @@ class ProfileCard extends Component {
  
 
   handleProfileUpdate = (profileInfo) => {
+
      console.log(this.state)
     const profileBody = this.state
     const file = this.fileInput.current.files[0]
@@ -69,6 +70,7 @@ class ProfileCard extends Component {
 
     // send request to upload the file
     API.updateProfileCard(profileInfo, profileBody)
+    
       .then((data) => {
         console.log(data)
         alert(`Profile Updated!`)
@@ -77,9 +79,9 @@ class ProfileCard extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
-
-  }
+      });
+    }
+  
 
   handleTextInputChange = event => {
     
