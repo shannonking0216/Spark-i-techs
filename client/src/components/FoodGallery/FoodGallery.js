@@ -29,7 +29,7 @@ class FoodGallery extends Component {
                     {/* <Col xs={12} md={8}> */}
                     {this.state.FoodGallery.map(image => (
                         
-                    <Image src={image.imageURL} className="img-border" height="200" width="200" />
+                    <Image src={image.imageURL} className="img-border" />
                     
                     ))}
                     {/* </Col> */}
