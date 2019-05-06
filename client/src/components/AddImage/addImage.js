@@ -5,7 +5,7 @@ import { MDBContainer } from 'mdbreact';
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
+import './style.css'
 
 
 
@@ -47,6 +47,7 @@ class AddImage extends Component {
         console.log(data)
         alert(`Image ${data.data.fileName} added!`)
         this.setState.fileName = ""
+        window.location.reload();
 
       })
       .catch(err => {
@@ -69,6 +70,7 @@ class AddImage extends Component {
       .then((data) => {
         console.log(data)
         alert(`Image ${data.data.fileName} added!`)
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
@@ -90,6 +92,7 @@ class AddImage extends Component {
       .then((data) => {
         console.log(data)
         alert(`Image ${data.data.fileName} added!`)
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
@@ -120,29 +123,29 @@ class AddImage extends Component {
           <span className="align-middle">
             {/* image upload control and a preview of the chosen image */}
             <hr />
-            <h2 className="AddImageHead">Add an Image</h2>
+            <h3 className="AddImageHead">Add an Image</h3>
             <Row>
-              <Col sm={4}></Col>
-              <Col sm={4}>
-                <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
-                  <Card.Header>Image Preview</Card.Header>
+            <Col sm={4}></Col>
+            <Col sm={4}>
+            <Card border="secondary" style={{ width: '18rem', textAlign: 'Center' }}>
+              <Card.Header>Image Preview</Card.Header>
 
-                  {this.state.imageURL ? (
-                    <Row>
-                      <Col sm={2}></Col>
-                      <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
-                      <Col sm={2}></Col>
-                    </Row>
-                  ) : null}
-                  <Card.Body>
-                    <Card.Text>
-                      random text
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <br />
-              </Col>
-              <Col sm={4}></Col>
+              {this.state.imageURL ? (
+                <Row>
+                  <Col sm={2}></Col>
+                  <Col sm={8}><ImageFilePreview src={this.state.imageURL} /></Col>
+                  <Col sm={2}></Col>
+                </Row>
+              ) : null}
+              <Card.Body>
+                <Card.Text>
+                  
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <br />
+            </Col>
+            <Col sm={4}></Col>
             </Row>
             <div className="custom-file">
               <input

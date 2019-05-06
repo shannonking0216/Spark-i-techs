@@ -10,11 +10,7 @@ const db = require('./models');
 const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 3001;
 
-// cloudinary.config({ 
-//   cloud_name: process.env.CLOUDINARY_NAME, 
-//   api_key: process.env.CLOUDINARY_API_KEY, 
-//   api_secret: process.env.CLOUDINARY_SECRET 
-// });
+
 
 const isAuthenticated = require("./config/isAuthenticated");
 const auth = require("./config/auth");
@@ -38,8 +34,8 @@ transporter.verify((error, success) => {
   }
 });
 
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
 
 app.use((req, res, next) => {
@@ -89,12 +85,12 @@ app.post('/send', (req, res, next) => {
           message: message,
         }).then(dbContactUs => res.json(dbContactUs))
         .catch(err => res.json(err));
-      
+
     }
   })
 
 })
-  
+
 
 // LOGIN ROUTE
 app.post('/api/login', (req, res) => {
@@ -159,30 +155,39 @@ app.post("/api/newcontact", (req, res) => {
     .catch(err => res.json(err));
 })
 
- // **IMAGE GET ROUTES** //
+// **IMAGE GET ROUTES** //
 
 app.get("/api/naturegallery", (req, res) => {
   db.NatureGallery
-   .find({})
-   .then(dbNatureGallery => res.json(dbNatureGallery))
-   .catch(err => res.json(err));
- });
+    .find({})
+    .then(dbNatureGallery => res.json(dbNatureGallery))
+    .catch(err => res.json(err));
+});
 
- app.get("/api/engagementgallery", (req, res) => {
+app.get("/api/engagementgallery", (req, res) => {
   db.EngagementGallery
-   .find({})
-   .then(dbEngagementGallery => res.json(dbEngagementGallery))
-   .catch(err => res.json(err));
- });
+    .find({})
+    .then(dbEngagementGallery => res.json(dbEngagementGallery))
+    .catch(err => res.json(err));
+});
 
- app.get("/api/foodgallery", (req, res) => {
+app.get("/api/foodgallery", (req, res) => {
   db.FoodGallery
-   .find({})
-   .then(dbFoodGallery => res.json(dbFoodGallery))
-   .catch(err => res.json(err));
- });
+    .find({})
+    .then(dbFoodGallery => res.json(dbFoodGallery))
+    .catch(err => res.json(err));
+});
 
- // **IMAGE POST ROUTES** //
+//**PROFILE CARD GET ROUTE **//
+
+app.get("/api/profileupdate", (req, res) => {
+  db.ProfileUpdate
+    .find({})
+    .then(dbProfileUpdate => res.json(dbProfileUpdate))
+    .catch(err => res.json(err));
+});
+
+// **IMAGE POST ROUTES** //
 
 
 app.post("/api/newnaturephoto", (req, res) => {
@@ -212,38 +217,67 @@ app.post("/api/newfoodphoto", (req, res) => {
     .catch(err => res.json(err));
 });
 
- // **IMAGE DELETE ROUTES** //
+
+
+// **PROFILE CARD POST ROUTE **//
+
+app.post("/api/profileupdate", (req, res) => {
+  db.ProfileUpdate
+    .create({
+      fileName: req.body.fileName,
+      imageURL: req.body.imageURL,
+      profileText: req.body.profileText,
+    }).then(dbProfileUpdate => res.json(dbProfileUpdate))
+    .catch(err => res.json(err));
+});
+
+// **PROFILE CARD UPDATE ROUTE** //
+
+app.put("/api/profileupdate/:id", (req, res) => {
+  db.ProfileUpdate
+    .findOneAndUpdate(
+      { _id: req.params.id }, 
+      { $set: req.body }, 
+      { new: true 
+      }).then(dbProfileUpdate => res.json(dbProfileUpdate))
+    .catch(err => res.json(err));
+});
+
+
+// **IMAGE DELETE ROUTES** //
 
 
 app.delete("/api/nature/:fileName", (req, res) => {
   db.NatureGallery
-      .deleteOne({fileName: req.params.fileName})
-      .then(dbFile => res.json(dbFile))
-      .catch(err => res.json(err));
+    .deleteOne({ fileName: req.params.fileName })
+    .then(dbFile => res.json(dbFile))
+    .catch(err => res.json(err));
 });
 
 app.delete("/api/engagement/:fileName", (req, res) => {
   db.EngagementGallery
-      .deleteOne({fileName: req.params.fileName})
-      .then(dbFile => res.json(dbFile))
-      .catch(err => res.json(err));
+    .deleteOne({ fileName: req.params.fileName })
+    .then(dbFile => res.json(dbFile))
+    .catch(err => res.json(err));
 });
 
 app.delete("/api/food/:fileName", (req, res) => {
   db.FoodGallery
-      .deleteOne({fileName: req.params.fileName})
-      .then(dbFile => res.json(dbFile))
-      .catch(err => res.json(err));
+    .deleteOne({ fileName: req.params.fileName })
+    .then(dbFile => res.json(dbFile))
+    .catch(err => res.json(err));
 });
 
+// **IMAGE DELETE ROUTES** //
 
 
-app.get("*", function(req, res) {
+
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 // ** SERVER START ** //
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
