@@ -22,7 +22,7 @@ class Footer extends Component {
                             <br></br>
                             <p>Get in tounch with our developers:</p>
                            
-                            <a href="#" id="andres">ANDRES VALDES</a>
+                            <a href="https://www.linkedin.com/in/andres-valdes-48b80317a/" id="andres">ANDRES VALDES</a>
                             <br></br>
                             <br></br>
                             <a href="#" id="brandon">BRANDON HARRIS</a>
@@ -31,7 +31,7 @@ class Footer extends Component {
                             <a href="#" id="shanon">SHANNON KING</a>
                             <br></br>
                             <br></br>
-                            <a href="#" id="olga">OLGA Karamyseva</a>
+                            <a href="#" id="olga">OLGA KARAMYSEVA</a>
                         </div>
                         <div className="col-sm-4" id="middle">
                         <h2>ABOUT US</h2>
@@ -59,8 +59,6 @@ class Footer extends Component {
                     <br></br>
                     <br></br>
                     <br></br>
-
-
                     <div className="footer-copyright text-center py-3">
                         <div>
                             &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> SPARKiTECHS </a>

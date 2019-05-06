@@ -1,4 +1,4 @@
-/************ The navbar css **************/
+/************ The body css **************/
 
 @import url('https://fonts.googleapis.com/css?family=Six+Caps');
 
@@ -32,6 +32,7 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
   color: whitesmoke;
+  float: right;
 }
 
 .navbar-dark .navbar-brand {
@@ -64,7 +65,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: -10;
-  border-bottom: 1px solid rgb(7, 75, 7);
+  border-bottom: 1px solid rgb(4, 44, 4);
 }
 
 /************* Profile page css *************/
@@ -120,7 +121,7 @@ body {
 
 /************* contact css *************/
 #container-contact{
-background-color: white
+/* background-color: white */
 }
 
 /************* footer css *************/
@@ -167,16 +168,15 @@ p {
 #footer-con > i:hover {
   transform:scale(1.2);
   box-shadow:3px 5px 5px rgba(255, 192,203,0.5);
-
 }
 
 #footer-con > i:active {
   transform:scale(1);
   box-shadow:3px 3px 1px rgba(255, 192,203,0.5);
-
-  
 }
-
+.footer-copyright {
+  color: white
+}
 
 
 

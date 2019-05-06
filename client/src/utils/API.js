@@ -61,12 +61,7 @@ export default {
   deleteFoodImage: (fileName) => {
     return axios.delete(`/api/food/${fileName}`);
   }
-
-
-
-
-
-
+  
 };
 
 // client\src\utils\API.js
