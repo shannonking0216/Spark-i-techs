@@ -3,10 +3,12 @@ import ContactUs from './../components/ContactUs';
 // import Navbar from "../components/Navbar"
 // import Images from "../components/Images/chile.jpg"
 import PhotoCarousel from '../components/PhotoCarousel';
+import MainProfileCard from '../components/MainProfileCard'
 import FooterLink from "../components/Footer"
 import NatureGallery from '../components/NatureGallery';
 import FoodGallery from '../components/FoodGallery';
 import EngagementGallery from '../components/EngagementGallery';
+ 
 
 // import { Link } from 'react-router-dom';
 // import { isMainThread } from 'worker_threads';
@@ -68,14 +70,15 @@ class Main extends Component {
                             <br />
                             <div className="col-md-4"></div>
                             <div className="col-md-4">
+                            <MainProfileCard />
                                 {/* <div className="amanda-image"></div> */}
-                                <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
+                                {/* <img src="https://cdn.pixabay.com/photo/2014/03/10/17/33/woman-284621_1280.jpg" id="amanda" class="img-circle person" alt="Amanda Huggakiss">
                                 </img>
                                 <br />
                                 <br />
                                 <br />
                                 <br />
-                                <p><em><strong>"Photography takes an instant out of time, altering life by holding it still."</strong></em></p>
+                                <p><em><strong>"Photography takes an instant out of time, altering life by holding it still."</strong></em></p> */}
                             </div>
                             <div className="col-md-4"></div>
                         </div>
