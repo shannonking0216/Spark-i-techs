@@ -163,31 +163,31 @@ class AddImage extends Component {
             <h5>Choose a Gallery to Upload Image to</h5>
             <br></br>
             <div>
-            <Row>
-            <Col sm={4}>
-              <Button
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitNature}>Nature Gallery</Button>
+              <Row>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary"
+                    type="submit"
+                    className="btn btn-outline-primary  pt-2"
+                    onClick={this.handleSubmitNature}>Nature Gallery</Button>
 
-              <br></br>
-              </Col>
-              <Col sm={4}>
-              <Button 
-                variant="outline-primary"
-                type="submit"
-                className="btn btn-outline-primary  pt-2"
-                onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
-              <br></br>
-              </Col>
-              <Col sm={4}>
-              <Button
-                variant="outline-primary" type="submit"
-                className="btn btn-outline-primary pt-2"
-                onClick={this.handleSubmitFood}>Food Gallery</Button>
+                  <br></br>
                 </Col>
-             </Row>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary"
+                    type="submit"
+                    className="btn btn-outline-primary  pt-2"
+                    onClick={this.handleSubmitEngagement}>Engagement Gallery</Button>
+                  <br></br>
+                </Col>
+                <Col sm={4}>
+                  <Button
+                    variant="outline-primary" type="submit"
+                    className="btn btn-outline-primary pt-2"
+                    onClick={this.handleSubmitFood}>Food Gallery</Button>
+                </Col>
+              </Row>
 
             </div>
           </span>
