@@ -22,16 +22,16 @@ export default {
 
   // **IMAGE GET ROUTE REDIRECTS** //
 
-  getAllNatureImages: function (NatureGallery) {
-    return axios.get("/api/naturegallery", NatureGallery)
+  getAllNatureImages: function () {
+    return axios.get("/api/naturegallery" )
   },
 
-  getAllEngagementImages: function (EngagementGallery) {
-    return axios.get("/api/engagementgallery", EngagementGallery)
+  getAllEngagementImages: function () {
+    return axios.get("/api/engagementgallery" )
   },
 
-  getAllFoodImages: function (FoodGallery) {
-    return axios.get("/api/foodgallery", FoodGallery)
+  getAllFoodImages: function () {
+    return axios.get("/api/foodgallery" )
   },
 
 // **IMAGE POST ROUTES REDIRECTS** //
@@ -60,8 +60,24 @@ export default {
 
   deleteFoodImage: (fileName) => {
     return axios.delete(`/api/food/${fileName}`);
-  }
-  
+  },
+
+
+ // ** PROFILE UPDATE ROUTE ** //
+
+ getProfileImage: () =>{
+  return axios.get('/api/profileupdate' )
+ },
+
+ updateProfileCard: (profileObjectId , profileBody) => {
+   console.log(profileObjectId)
+   return axios.put(`/api/profileupdate/${profileObjectId}`, profileBody); 
+ }
+
+
+
+
+
 };
 
 // client\src\utils\API.js
