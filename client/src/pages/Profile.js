@@ -60,17 +60,17 @@ class Profile extends Component {
         
         <Row className="profileCol2">
           <Col className="sideNav" sm={2}>
-            <p>Welcome Back! </p>
+            <p className="text-dark">Welcome Back! </p>
             <h5>{this.state.username}</h5>
             <hr></hr>
             <ProfilePic />
             <hr></hr>
             <FontAwesomeIcon className="faOnClick" onClick={this.ProfileChangeClick} icon={faUser} size="lg" />
-            <p className="linkCol2" onClick={this.ProfileChangeClick}>Change Profile Pic</p>
+            <p className="linkCol2" className="text-dark" onClick={this.ProfileChangeClick}>Change Profile Pic</p>
             <FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faImages} size="lg" />
-            <p className="linkCol2" onClick={this.AddImageClick}>Add Image to Gallery</p>
+            <p className="linkCol2" className="text-dark" onClick={this.AddImageClick}>Add Image to Gallery</p>
             <FontAwesomeIcon className="faOnClick" onClick={this.DeleteImageClick} icon={faTrashAlt} size="lg" />
-            <p className="linkCol2" onClick={this.DeleteImageClick}>Delete Image from Gallery</p>
+            <p className="linkCol2" className="text-dark" onClick={this.DeleteImageClick}>Delete Image from Gallery</p>
             <div><Link to="/"><FontAwesomeIcon className="faOnClick" onClick={this.AddImageClick} icon={faHome} size="lg" /></Link></div>
             <div><Link to="/">Go home</Link></div>
 
