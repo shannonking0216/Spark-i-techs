@@ -42,7 +42,7 @@ class Footer extends Component {
                         <p>LEADERSHIP</p>
                         </div>
                         <div className="col-sm-4" id="footer-con">
-                            <h2>Catch me on:</h2>
+                            <h2>Catch us on:</h2>
                             <br></br>
                             <br></br>
                             <i class="fab fa-google-plus-square fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
