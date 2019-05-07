@@ -39,7 +39,7 @@ class MainProfileCard extends Component {
                     <br />
                     <br />
                     {this.state.profileId.map(text => (
-                    <p><em><strong>{text.profileText}</strong></em></p>
+                    <p text-color="dark" ><em><strong>{text.profileText}</strong></em></p>
                     ))}
                     {/* <Col xs={6} md={4}>
                        
