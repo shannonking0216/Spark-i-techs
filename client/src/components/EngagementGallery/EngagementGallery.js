@@ -22,6 +22,9 @@ class EngagementGallery extends Component {
 
     render() {
         return (<div> 
+            <br></br>
+            <br></br>
+            <br></br>
             <h1 className="img-text">Engagement Photos</h1>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
@@ -29,7 +32,7 @@ class EngagementGallery extends Component {
                    
                     {this.state.EngagementGallery.map(image => (
                         
-                    <Image src={image.imageURL} className="img-border" className="img-spacing"/>
+                        <div className="center-imgs"><Image src={image.imageURL} className="img-border"/></div>
                     
                     ))}
                    
@@ -42,6 +45,8 @@ class EngagementGallery extends Component {
                 {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                 
             </Container>
+            <br></br>
+            <br></br>
             </div>
         );
     }
