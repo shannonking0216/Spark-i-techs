@@ -5,6 +5,7 @@ import { MDBContainer } from 'mdbreact';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import "./style.css";
 
 
 
@@ -152,7 +153,8 @@ class ProfileCard extends Component {
             <Col sm={4}></Col>
             <Col sm={4}>
               <input 
-                
+
+                classname="profileInput"
                 value={this.state.profileText}
                 name="profileText"
                 placeholder="Profile Text"
