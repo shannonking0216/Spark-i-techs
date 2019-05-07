@@ -5,7 +5,7 @@ import { MDBContainer } from 'mdbreact';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "./style.css";
+import "./profilecard.css";
 
 
 
@@ -138,7 +138,7 @@ class ProfileCard extends Component {
               <Col sm={4}></Col>
             </Row>
             <div className="custom-file">
-              <input
+              <input 
                 ref={this.fileInput}
                 type="file"
                 className="custom-file-input"
@@ -154,7 +154,7 @@ class ProfileCard extends Component {
             <Col sm={4}>
               <input 
 
-                classname="profileInput"
+                className="profileInput targetThis"
                 value={this.state.profileText}
                 name="profileText"
                 placeholder="Profile Text"
