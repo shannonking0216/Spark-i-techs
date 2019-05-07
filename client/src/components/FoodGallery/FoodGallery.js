@@ -22,14 +22,17 @@ class FoodGallery extends Component {
 
     render() {
         return (<div> 
-            <h1 text="centered" className="img-text" >Food Photos</h1>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h1 text="centered" className="img-text" >Cullinary Photos</h1>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
                 <Row>
                     {/* <Col xs={12} md={8}> */}
                     {this.state.FoodGallery.map(image => (
                         
-                    <Image src={image.imageURL} className="img-border" />
+                        <div className="center-imgs"><Image src={image.imageURL} className="img-border"/></div>
                     
                     ))}
                     {/* </Col> */}
@@ -42,6 +45,8 @@ class FoodGallery extends Component {
                 {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                 
             </Container>
+            <br></br>
+            <br></br>
             </div>
         );
     }
