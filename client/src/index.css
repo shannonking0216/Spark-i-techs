@@ -169,7 +169,7 @@ p {
 }
 
 #footer-con > i {
-  color: rgb(240, 8, 8);
+  color: rgb(142, 247, 142);
   transform:scale(1);
   transition:all 0.5s cubic-bezier(.62,.01,.47,.81);
 }
