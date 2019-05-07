@@ -47,8 +47,8 @@ class PhotoCarousel extends Component {
                     />
 
                     <Carousel.Caption>
-                        <h3>Nature Photo Gallery</h3>
-                        <p>Click here to see Amanda's Nature Photography!</p>
+                        <h3><strong>Nature Photo Gallery</strong></h3>
+                        <p><strong>Click here</strong></p>
                     </Carousel.Caption>
 
                 </Carousel.Item>
@@ -64,8 +64,8 @@ class PhotoCarousel extends Component {
                     />
 
                     <Carousel.Caption>
-                        <h3>Cullinary Photo Gallery</h3>
-                        <p>Click here to see Amanda's Culinary Photography!</p>
+                        <h3><strong>Cullinary Photo Gallery</strong></h3>
+                        <p><strong>Click here</strong></p>
                     </Carousel.Caption>
 
                 </Carousel.Item>
@@ -81,7 +81,7 @@ class PhotoCarousel extends Component {
 
                     <Carousel.Caption>
                         <h3><strong>Engagement Photo Gallery</strong></h3>
-                        <p><strong>Check out Amanda's Engagement Photography!</strong></p>
+                        <p><strong>Click here</strong></p>
                     </Carousel.Caption>
 
                 </Carousel.Item>
